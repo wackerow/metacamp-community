@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-chakraui-rainbow-template",
+  "name": "metacamp",
   "version": "0.1.0",
-  "description": "NextJS + Chakra-UI + RainbowKit website template",
+  "description": "MetaCamp website",
   "author": "Paul Wackerow <54227730+wackerow@users.noreply.github.com>",
   "license": "MIT",
   "private": false,
