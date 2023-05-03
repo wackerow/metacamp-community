@@ -46,7 +46,7 @@ export default function Home() {
           textTransform="uppercase"
           mt={16}
         >
-          Coming soon™️
+          Coming soon<Text as="span" fontSize="lg" verticalAlign="top">TM</Text>
         </Text>
         <Box w="100%" position="absolute" inset="auto 0 0 0">
           <Image
