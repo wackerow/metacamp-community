@@ -1,43 +1,27 @@
 import { ChakraProvider, localStorageManager } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
+import { configureChains, createClient, WagmiConfig } from 'wagmi'
+import { alchemyProvider } from 'wagmi/providers/alchemy'
+import { publicProvider } from 'wagmi/providers/public'
+import { arbitrum, gnosis, mainnet, optimism } from 'wagmi/chains'
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
+
 import theme from '../theme'
-
-
-import '@rainbow-me/rainbowkit/styles.css';
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-} from '@rainbow-me/rainbowkit';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import {
-  arbitrum,
-  gnosis,
-  mainnet,
-  optimism,
-} from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+import '@rainbow-me/rainbowkit/styles.css'
+import { Fonts } from '@/components'
 
 const { chains, provider } = configureChains(
-  [
-    arbitrum,
-    gnosis,
-    mainnet,
-    optimism,
-  ],
-  [
-    alchemyProvider({ apiKey: process.env.ALCHEMY_ID || "" }),
-    publicProvider()
-  ]
-);
+  [arbitrum, gnosis, mainnet, optimism],
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID || '' }), publicProvider()]
+)
 const { connectors } = getDefaultWallets({
   appName: 'nextjs-chakraui-rainbow-template',
-  chains
-});
+  chains,
+})
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
-  provider
+  provider,
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -45,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <ChakraProvider theme={theme} colorModeManager={localStorageManager}>
+          <Fonts />
           <Component {...pageProps} />
         </ChakraProvider>
       </RainbowKitProvider>

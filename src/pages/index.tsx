@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { PageMetadata } from '@/components'
 
@@ -22,7 +22,6 @@ export default function Home() {
           position="absolute"
           inset="1rem auto auto 1.5rem"
           width="8vmin"
-          aspectRatio={1}
           alt="Chili home icon"
         />
         <Image
@@ -39,11 +38,17 @@ export default function Home() {
           zIndex={2}
           px={8}
         />
-        <Box
-          w="100%"
-          position="absolute"
-          inset="auto 0 0 0"
+        <Text
+          color="white"
+          fontSize={['2xl', null, '3xl']}
+          zIndex={2}
+          fontFamily="heading"
+          textTransform="uppercase"
+          mt={16}
         >
+          Coming soon™️
+        </Text>
+        <Box w="100%" position="absolute" inset="auto 0 0 0">
           <Image
             src="/assets/hero-bg.svg"
             objectFit="cover"

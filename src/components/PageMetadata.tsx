@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { DEFAULT_IMAGE_PATH, SITE_NAME, SITE_URL, TWITTER_HANDLE } from '../../constants'
+import {
+  DEFAULT_IMAGE_PATH,
+  SITE_NAME,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from '../../constants'
 
 interface Props {
   title: string
