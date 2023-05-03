@@ -54,7 +54,7 @@ export default function Home() {
             objectFit="cover"
             objectPosition="left"
             minW="100%"
-            height="70vh"
+            height="100vh"
             alt="Beach background art"
             zIndex={1}
             overflow="visible"
