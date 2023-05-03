@@ -4,7 +4,9 @@ const overrides = {
   config,
   colors: {},
   components: {},
-  fonts: {},
+  fonts: {
+    heading: "'Justice League', sans-serif",
+  },
   shadows: {},
   sizes: {},
   styles: {

@@ -5,7 +5,14 @@ import theme from '../theme'
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/justice-league/justice-league.ttf"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />

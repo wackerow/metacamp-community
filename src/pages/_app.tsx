@@ -11,18 +11,9 @@ import {
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import {
   arbitrum,
-  arbitrumGoerli,
-  baseGoerli,
   gnosis,
-  goerli,
-  hardhat,
-  localhost,
   mainnet,
   optimism,
-  optimismGoerli,
-  polygon,
-  polygonZkEvmTestnet,
-  sepolia,
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -30,18 +21,9 @@ import { publicProvider } from 'wagmi/providers/public';
 const { chains, provider } = configureChains(
   [
     arbitrum,
-    arbitrumGoerli,
-    baseGoerli,
     gnosis,
-    goerli,
-    hardhat,
-    localhost,
     mainnet,
     optimism,
-    optimismGoerli,
-    polygon,
-    polygonZkEvmTestnet,
-    sepolia,  
   ],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID || "" }),

@@ -7,6 +7,6 @@ import { type ThemeConfig } from '@chakra-ui/react'
  * Choice is stored/managed with local storage
  */
 export const config: ThemeConfig = {
-  initialColorMode: 'system',
-  useSystemColorMode: true,
+  initialColorMode: 'light',
+  useSystemColorMode: false,
 }
