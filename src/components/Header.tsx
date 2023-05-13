@@ -11,12 +11,8 @@ export const Header: React.FC = () => {
         alt="Chili silhouette logo"
       />
       <Flex alignItems="center" gap={4}>
-        <Button isDisabled>
-          MetaCampus
-        </Button>
-        <Button isDisabled>
-          Campers
-        </Button>
+        <Button isDisabled>MetaCampus</Button>
+        <Button isDisabled>Campers</Button>
         {/* <ConnectButton /> */}
       </Flex>
     </Flex>

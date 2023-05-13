@@ -1,10 +1,19 @@
-import { Box, Button, Flex, Grid, Image, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Image,
+  Input,
+  InputGroup,
+  Text,
+} from '@chakra-ui/react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { PageMetadata, Header } from '@/components'
+import { PageMetadata, Header, Timeline } from '@/components'
 
 export default function Home() {
   return (
-    <Box textStyle="body" maxW="container.xl" mx="auto">
+    <Box textStyle="body" maxW="8xl" mx="auto">
       {/* Metadata */}
       <PageMetadata
         title="MetaCamp"
@@ -16,7 +25,6 @@ export default function Home() {
       <Flex
         as="section"
         direction="column"
-        // h="full"
         align="center"
         bg="fg"
         pt="15vmin" // TODO: Magic number
@@ -48,10 +56,11 @@ export default function Home() {
             maxW="265px" // TODO: Magic number
             isDisabled
           >
-            Coming soon
+            Coming soon!
           </Button>
         </Flex>
         {/* Section background */}
+        <Box />
         <Image
           src="/assets/hero-bg.svg"
           objectFit="cover"
@@ -84,9 +93,9 @@ export default function Home() {
             borderRadius="2xl"
             color="#6F85F2"
             placeItems="center"
-            position='relative'
+            position="relative"
           >
-            [Media]
+            [Photo carousel]
             <Image
               src="/assets/maracas.svg"
               position="absolute"
@@ -117,18 +126,9 @@ export default function Home() {
           zIndex={2}
         >
           <Text as="h2" textStyle="heading">
-            Timeline
+            Timeline of POAPS
           </Text>
-          <Grid
-            flex={1}
-            py={32}
-            bg="fg"
-            borderRadius="2xl"
-            color="#6F85F2"
-            placeItems="center"
-          >
-            [POAP Timeline]
-          </Grid>
+          <Timeline />
         </Flex>
         {/* Section background */}
         <Image
@@ -237,24 +237,19 @@ export default function Home() {
             bg="white"
             borderRadius="3xl"
             mx={4}
-            maxW="container.sm"
+            maxW="lg"
             h="fit-content"
             display="flex"
             gap={4}
             p="3px"
             alignItems="center"
           >
-            <Input
-              type='email'
-              placeholder='Email'
-              bg="none"
-              border="none"
-            />
+            <Input type="email" placeholder="Email" bg="none" border="none" />
             <Button
               isDisabled
               bg="primary"
               color="fg"
-              borderRadius="2xl" 
+              borderRadius="2xl"
               py={6}
               px={8}
             >
