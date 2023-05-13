@@ -4,31 +4,21 @@ import {
   Flex,
   Grid,
   Image,
-  Input,
-  InputGroup,
   Text,
 } from '@chakra-ui/react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { PageMetadata, Header, Timeline } from '@/components'
+import { PageMetadata, Section, Timeline } from '@/components'
 
 export default function Home() {
   return (
-    <Box textStyle="body" maxW="8xl" mx="auto">
+    <>
       {/* Metadata */}
       <PageMetadata
         title="MetaCamp"
         description="An IRL community experience"
       />
-      {/* Section: Header */}
-      <Header />
       {/* Section: Hero */}
-      <Flex
-        as="section"
-        direction="column"
-        align="center"
-        bg="fg"
-        pt="15vmin" // TODO: Magic number
-      >
+      <Section bg="fg" align="center" pt="15vmin">
         {/* Section content */}
         <Flex direction="column" gap={4} alignItems="center">
           {/* COSTA RICA text image */}
@@ -70,9 +60,9 @@ export default function Home() {
           alt="Beach background art"
           zIndex={1}
         />
-      </Flex>
+      </Section>
       {/* Section: Activities */}
-      <Flex as="section" direction="column" bg="primary" mt="-1px">
+      <Section bg="primary" mt="-1px">
         {/* Section contents */}
         <Flex gap={[8, null, 16]} p={[8, null, 16]} zIndex={2}>
           <Flex direction="column" flex={1}>
@@ -115,9 +105,9 @@ export default function Home() {
           zIndex={1}
           mt="-240px" // TODO: Magic number
         />
-      </Flex>
+      </Section>
       {/* Section: Timeline */}
-      <Flex as="section" direction="column" bg="secondary">
+      <Section bg="secondary">
         {/* Section contents */}
         <Flex
           gap={[8, null, 16]}
@@ -139,9 +129,9 @@ export default function Home() {
           alt="Beach background art"
           zIndex={1}
         />
-      </Flex>
+      </Section>
       {/* Section: Meet the campers */}
-      <Flex as="section" direction="column" bg="primary">
+      <Section bg="primary">
         <Flex gap={[8, null, 16]} p={[8, null, 16]} zIndex={2}>
           <Flex direction="column" flex={1}>
             <Text as="h2" textStyle="heading">
@@ -176,9 +166,9 @@ export default function Home() {
             [Camper profiles]
           </Grid>
         </Flex>
-      </Flex>
+      </Section>
       {/* Section: Representation */}
-      <Flex as="section" direction="column" bg="primary-dark">
+      <Section bg="primary-dark">
         {/* Section background */}
         <Image
           src="/assets/curve-bg.svg"
@@ -194,6 +184,7 @@ export default function Home() {
           p={[8, null, 16]}
           direction="column"
           zIndex={2}
+          w="full"
         >
           <Text as="h2" textStyle="heading" color="white" textAlign="center">
             Project representation
@@ -205,59 +196,12 @@ export default function Home() {
             borderRadius="2xl"
             color="#6F85F2"
             placeItems="center"
+            w="full"
           >
             [Community/DAO representation]
           </Grid>
         </Flex>
-      </Flex>
-      {/* Section: Footer */}
-      <Flex as="section" direction="column" bg="fg">
-        {/* Section background */}
-        <Image
-          src="/assets/waves-bg.svg"
-          objectFit="cover"
-          objectPosition="top"
-          w="full"
-          alt="Beach background art"
-          zIndex={1}
-        />
-        <Flex direction="column" gap={6} zIndex={2} alignItems="center" mb={32}>
-          <Image
-            src="/assets/chili-home.svg"
-            objectFit="cover"
-            objectPosition="top"
-            w="80px"
-            alt="Chili silhouette logo"
-          />
-
-          <Text fontFamily="body" color="white" fontWeight="normal">
-            Follow us
-          </Text>
-          <InputGroup
-            bg="white"
-            borderRadius="3xl"
-            mx={4}
-            maxW="lg"
-            h="fit-content"
-            display="flex"
-            gap={4}
-            p="3px"
-            alignItems="center"
-          >
-            <Input type="email" placeholder="Email" bg="none" border="none" />
-            <Button
-              isDisabled
-              bg="primary"
-              color="fg"
-              borderRadius="2xl"
-              py={6}
-              px={8}
-            >
-              Newsletter me
-            </Button>
-          </InputGroup>
-        </Flex>
-      </Flex>
-    </Box>
+      </Section>
+    </>
   )
 }

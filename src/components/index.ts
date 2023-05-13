@@ -1,4 +1,6 @@
-export * from './PageMetadata'
 export * from './Fonts'
+export * from './Footer'
 export * from './Header'
+export * from './PageMetadata'
+export * from './Section'
 export * from './Timeline'

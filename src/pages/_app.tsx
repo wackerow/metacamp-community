@@ -1,4 +1,4 @@
-import { ChakraProvider, localStorageManager } from '@chakra-ui/react'
+import { ChakraProvider, localStorageManager, Box } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
@@ -8,7 +8,7 @@ import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 
 import theme from '../theme'
 import '@rainbow-me/rainbowkit/styles.css'
-import { Fonts } from '@/components'
+import { Fonts, Header, Footer } from '@/components'
 
 const { chains, provider } = configureChains(
   [arbitrum, gnosis, mainnet, optimism],
@@ -30,7 +30,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <RainbowKitProvider chains={chains}>
         <ChakraProvider theme={theme} colorModeManager={localStorageManager}>
           <Fonts />
-          <Component {...pageProps} />
+          <Box textStyle="body" maxW="100rem" mx="auto">
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </Box>
         </ChakraProvider>
       </RainbowKitProvider>
     </WagmiConfig>

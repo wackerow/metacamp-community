@@ -39,7 +39,24 @@ export const Timeline: React.FC = () => {
   return (
     <Flex overflowX="scroll" gap={8} justify="center">
       {data.map(({ year, label, href, src }) => (
-        <Flex key={href} direction="column" align="center" gap={8}>
+        <Flex
+          key={href}
+          direction="column"
+          align="center"
+          gap={8}
+          position="relative"
+          _after={{
+            content: `""`,
+            position: 'absolute',
+            left: `calc(100% - ${overflow})`,
+            top: `calc(${poapSize} * 0.5)`,
+            height: '10px', // TODO: Magic number
+            width: `calc(4 * ${overflow})`,
+            bg: 'secondary-dark',
+            zIndex: -1,
+          }}
+          _last={{ _after: { display: 'none' } }}
+        >
           <Image
             borderRadius="full"
             w={poapSize}
@@ -47,17 +64,7 @@ export const Timeline: React.FC = () => {
             alt={`POAP for ${data[0].year}`}
             src={`/assets/${src}`}
             position="relative"
-            _after={{
-              content: `"$"`,
-              position: 'absolute',
-              left: `calc(100% - ${overflow})`,
-              top: 'calc(50% - 5px)',
-              height: '10px', // TODO: Magic number
-              width: 'calc(1rem + 2rem)',
-              color: 'secondary-dark',
-              outline: '5px solid red',
-            }}
-            _last={{ _after: { display: 'none' } }}
+            objectFit="contain"
           />
           {/* TODO: Fix year font */}
           <Text fontSize="3xl">{year}</Text>
