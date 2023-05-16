@@ -3,7 +3,6 @@ import { Section } from './'
 
 export const Footer: React.FC = () => (
   <Section bg="fg">
-    {/* Section background */}
     <Image
       src="/assets/waves-bg.svg"
       objectFit="cover"
@@ -12,7 +11,15 @@ export const Footer: React.FC = () => (
       alt="Beach background art"
       zIndex={1}
     />
-    <Flex direction="column" gap={6} zIndex={2} alignItems="center" mb={32}>
+    <Flex
+      direction="column"
+      gap={6}
+      zIndex={2}
+      alignItems="center"
+      mb={[16, 24, 32]}
+      mt={[-16, -24, -32]}
+      px={8}
+    >
       <Image
         src="/assets/chili-home.svg"
         objectFit="cover"
@@ -42,12 +49,11 @@ export const Footer: React.FC = () => (
           color="fg"
           borderRadius="2xl"
           py={6}
-          px={8}
+          px={10}
         >
           Newsletter me
         </Button>
       </InputGroup>
     </Flex>
   </Section>
-
 )

@@ -10,7 +10,7 @@ export const Section: React.FC<FlexProps> = ({ bg, ...restProps }) => {
         '&>div': {
           maxW: 'container.xl',
           mx: 'auto',
-        }
+        },
       }}
       {...restProps}
     />

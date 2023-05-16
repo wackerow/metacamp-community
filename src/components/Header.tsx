@@ -6,10 +6,10 @@ export const Header: React.FC = () => {
     <Flex
       justify="space-between"
       p={6}
-      > 
+    >
       <Image
         src="/assets/chili-home.svg"
-        h="5rem"
+        h="3.75rem"
         w="auto"
         alt="Chili silhouette logo"
       />

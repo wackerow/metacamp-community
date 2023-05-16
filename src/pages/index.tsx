@@ -1,13 +1,6 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Image,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { PageMetadata, Section, Timeline } from '@/components'
+import { CampersPreview, PageMetadata, Section, Timeline } from '@/components'
 
 export default function Home() {
   return (
@@ -18,7 +11,7 @@ export default function Home() {
         description="An IRL community experience"
       />
       {/* Section: Hero */}
-      <Section bg="fg" align="center" pt="15vmin">
+      <Section bg="fg" align="center" pt="5vmin">
         {/* Section content */}
         <Flex direction="column" gap={4} alignItems="center">
           {/* COSTA RICA text image */}
@@ -64,7 +57,12 @@ export default function Home() {
       {/* Section: Activities */}
       <Section bg="primary" mt="-1px">
         {/* Section contents */}
-        <Flex gap={[8, null, 16]} p={[8, null, 16]} zIndex={2}>
+        <Flex
+          gap={[8, null, null, 12]}
+          p={[8, null, null, 16]}
+          zIndex={2}
+          direction={['column', null, null, 'row']}
+        >
           <Flex direction="column" flex={1}>
             <Text as="h2" textStyle="heading">
               Activities
@@ -84,6 +82,7 @@ export default function Home() {
             color="#6F85F2"
             placeItems="center"
             position="relative"
+            minH="10rem" /* TODO: Fix once images present */
           >
             [Photo carousel]
             <Image
@@ -132,40 +131,46 @@ export default function Home() {
       </Section>
       {/* Section: Meet the campers */}
       <Section bg="primary">
-        <Flex gap={[8, null, 16]} p={[8, null, 16]} zIndex={2}>
-          <Flex direction="column" flex={1}>
+        <Grid
+          gap={[8, null, 16]}
+          p={[8, null, 16]}
+          zIndex={2}
+          templateAreas={[
+            `"copy" "campers" "button"`,
+            null,
+            null,
+            `"copy campers" "button ."`,
+          ]}
+          templateColumns={['1fr', null, null, '1fr 2fr']}
+        >
+          <Flex direction="column" gridArea="copy">
             <Text as="h2" textStyle="heading">
               Meet the campers
             </Text>
-            <Text mb={16}>
+            <Text>
               Drumstick pork loin tongue meatloaf turkey. Sausage ball tip
               turkey porchetta pork chop. Salami pancetta shankle, ham
             </Text>
-            <Button
-              bg="white"
-              color="fg"
-              fontSize="xl"
-              zIndex={2}
-              textTransform="uppercase"
-              p={8}
-              borderRadius="2xl"
-              w="min(100%, 265px)"
-              isDisabled
-            >
-              View campers
-            </Button>
           </Flex>
-          <Grid
-            flex={2}
-            h="fit-container"
-            bg="fg"
+          <Button
+            as="a"
+            href="#"
+            gridArea="button"
+            bg="white"
+            color="fg"
+            fontSize="xl"
+            zIndex={2}
+            textTransform="uppercase"
+            py={8}
+            px={16}
+            mx={['auto', null, 0]}
             borderRadius="2xl"
-            color="#6F85F2"
-            placeItems="center"
+            w={['100%', 'fit-content']}
           >
-            [Camper profiles]
-          </Grid>
-        </Flex>
+            View campers
+          </Button>
+          <CampersPreview gridArea="campers" />
+        </Grid>
       </Section>
       {/* Section: Representation */}
       <Section bg="primary-dark">
@@ -190,15 +195,14 @@ export default function Home() {
             Project representation
           </Text>
           <Grid
-            flex={1}
             py={16}
+            px={8}
             bg="fg"
             borderRadius="2xl"
             color="#6F85F2"
             placeItems="center"
-            w="full"
           >
-            [Community/DAO representation]
+            <Text textAlign="center">[Community/DAO representation]</Text>
           </Grid>
         </Flex>
       </Section>
