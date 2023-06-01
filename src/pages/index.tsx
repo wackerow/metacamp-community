@@ -194,33 +194,22 @@ export default function Home() {
           alt="Beach background art"
           zIndex={1}
           mt={-160}
-          // position="absolute"
-          // bottom={0}
         />
       </Section>
       {/* Section: Meet the campers */}
       <Section bg="primary">
-        <Grid
-          gap={[8, null, 16]}
-          p={[8, null, 16]}
-          zIndex={2}
-          templateAreas={[
-            `"copy" "campers" "button"`,
-            null,
-            null,
-            `"copy campers" "button ."`,
-          ]}
-          templateColumns={['1fr', null, null, '1fr 2fr']}
-        >
-          <Flex direction="column" gridArea="copy">
+        <Flex direction="column" gap={12}>
+          <Flex direction="column" gridArea="copy" textAlign="center">
             <Text as="h2" textStyle="heading">
               Meet the campers
             </Text>
             <Text>
-              Drumstick pork loin tongue meatloaf turkey. Sausage ball tip
-              turkey porchetta pork chop. Salami pancetta shankle, ham
+              Our campers are a self selected network of regenerative thinkers, digital nomads, DAO Architects, Spiritual Travelers, Solidity Dreamers, and Rabbit Hole Inspectors.
             </Text>
+            <Text fontWeight="bold">Here is what they are saying about MetaCamp:</Text>
           </Flex>
+          <CampersPreview /* gridArea="campers" */ />
+          {/* <CamperQuote /> */}
           <Button
             as="a"
             href="#"
@@ -232,14 +221,13 @@ export default function Home() {
             textTransform="uppercase"
             py={8}
             px={16}
-            mx={['auto', null, 0]}
+            mx={['auto', null]}
             borderRadius="2xl"
             w={['100%', 'fit-content']}
           >
-            View campers
+            Meet some campers!
           </Button>
-          <CampersPreview gridArea="campers" />
-        </Grid>
+        </Flex>
       </Section>
       {/* Section: Representation */}
       <Section bg="primary-dark">

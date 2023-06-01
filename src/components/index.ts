@@ -1,4 +1,5 @@
 export * from './CampersPreview'
+export * from './CamperQuoteCard'
 export * from './Fonts'
 export * from './Footer'
 export * from './Header'

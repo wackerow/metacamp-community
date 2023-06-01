@@ -14,6 +14,9 @@ const overrides = {
     blue: {
       900: '#292F51', // "#1A365D",
     },
+    gray: {
+      600: '#4A6164',
+    },
   },
   radii: {
     '3xl': '1.175rem',
@@ -23,6 +26,7 @@ const overrides = {
     heading: "'Justice League', sans-serif",
     body: "'Space Mono', monospace",
     callout: "'TrashHand', sans-serif",
+    quote: "'Inter', sans-serif",
   },
   shadows: {},
   sizes: {},
