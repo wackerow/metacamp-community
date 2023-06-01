@@ -12,6 +12,24 @@ export default function Document() {
           as="font"
           crossOrigin=""
         />
+        <link
+          rel="preload"
+          href="/fonts/space-mono/SpaceMono-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/space-mono/SpaceMono-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/space-mono/SpaceMono-Italic.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />

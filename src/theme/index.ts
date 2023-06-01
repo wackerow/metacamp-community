@@ -4,7 +4,7 @@ const overrides = {
   config,
   colors: {
     yellow: {
-      500: '#F0B130', // "#D69E2E",
+      500: '#F3B73C', //'#F0B130', // "#D69E2E",
       600: '#B78622', // "#B7791F",
     },
     green: {
@@ -22,6 +22,7 @@ const overrides = {
   fonts: {
     heading: "'Justice League', sans-serif",
     body: "'Space Mono', monospace",
+    callout: "'TrashHand', sans-serif",
   },
   shadows: {},
   sizes: {},
@@ -35,11 +36,23 @@ const overrides = {
         margin: 0,
       },
       body: {
-        transition: 'background 200ms linear !important',
         bg: 'fg',
+        bgImage: 'url(/assets/stars.svg)',
+        bgRepeat: 'repeat',
+        bgSize: 'contain',
         fontFamily: 'body',
-        fontWeight: 'bold',
+        fontWeight: 'regular',
         fontSize: 'xl',
+      },
+      '[data-rk] .ju367v9c': {
+        bg: 'secondary',
+        color: 'fg',
+        fontFamily: 'body',
+        textTransform: 'uppercase',
+        py: 3,
+        px: 7,
+        h: 'auto',
+        borderRadius: '2xl',
       },
     }),
   },
@@ -52,7 +65,7 @@ const overrides = {
     },
     body: {
       fontFamily: 'body',
-      fontWeight: 'bold',
+      fontWeight: 'regular',
       fontSize: 'xl',
       color: 'fg',
     },

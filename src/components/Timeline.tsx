@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Link, Text } from '@chakra-ui/react'
 
 interface TimelineItem {
   year: number
@@ -9,73 +9,78 @@ interface TimelineItem {
 const data: TimelineItem[] = [
   {
     year: 2021,
-    label: 'View attendees',
+    label: 'Inception',
     href: 'https://poap.gallery/event/5895',
     src: 'poap-mcon-2021.png',
   },
   {
     year: 2022,
-    label: 'View attendees',
+    label: 'Version 1',
     href: 'https://poap.gallery/event/37190',
     src: 'poap-metacamp-2022.png',
   },
   {
     year: 2023,
-    label: 'View attendees',
+    label: 'Version 2',
     href: 'https://poap.gallery/event/125389',
     src: 'poap-metacamp-2023.png',
   },
   {
     year: 2024,
-    label: 'Register',
+    label: 'Whitelist for V3',
     href: '#',
     src: 'poap-future.svg',
   },
 ]
 
 export const Timeline: React.FC = () => {
-  const poapSize = '250px'
-  const overflow = '1rem'
+  const poapSize = 'min(180px, 40vw)'
+  const overflow = '2rem'
   return (
-    <Flex overflowX="scroll" gap={8} justify="center">
+    <Flex
+      direction={["column", null, null, "row"]}
+      overflow="none"
+      gap={8}
+      justify="center"
+      maxW="100%"
+    >
       {data.map(({ year, label, href, src }) => (
         <Flex
           key={href}
-          direction="column"
+          direction={["row", null, null, "column"]}
           align="center"
           gap={8}
           position="relative"
           _after={{
             content: `""`,
             position: 'absolute',
-            left: `calc(100% - ${overflow})`,
-            top: `calc(${poapSize} * 0.5)`,
-            height: '10px', // TODO: Magic number
-            width: `calc(4 * ${overflow})`,
+            left: [`calc(${poapSize} * 0.5)`, null, null, `calc(100% - ${overflow})`],
+            top: [`calc(100% - ${overflow})`, null, null, `calc(${poapSize} * 0.5)`],
+            height: [`calc(4 * ${overflow})`, null, null, '10px'], // TODO: Magic number
+            width: ['10px', null, null, `calc(4 * ${overflow})`],
             bg: 'secondary-dark',
             zIndex: -1,
           }}
           _last={{ _after: { display: 'none' } }}
         >
-          <Image
+          <Box
             borderRadius="full"
             w={poapSize}
             h={poapSize}
-            alt={`POAP for ${data[0].year}`}
-            src={`/assets/${src}`}
+            aria-label={`POAP for ${data[0].year}`}
+            bgImage={`url(/assets/${src})`}
+            bgSize="contain"
             position="relative"
-            objectFit="contain"
           />
           {/* TODO: Fix year font */}
-          <Text fontSize="3xl">{year}</Text>
-          <Button
-            as="a"
-            bg="white"
-            href={href}
-            target={href.startsWith('http') ? '_blank' : ''}
-          >
-            {label}
-          </Button>
+          <Flex direction="column" align={["start", null, null, "center"]} gap={[2, null, null, 8]} py={4}>
+            <Text fontSize="3xl" fontWeight="bold">{year}</Text>
+            <Link href={href} isExternal={href.startsWith('http')}>
+              <Box bg="white" borderRadius="2xl" py={4} px={8} fontSize="md" fontWeight="bold" maxW={['16ch', 'fit-content']}>
+                {label}
+              </Box>
+            </Link>
+          </Flex>
         </Flex>
       ))}
     </Flex>

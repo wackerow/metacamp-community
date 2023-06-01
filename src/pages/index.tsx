@@ -11,10 +11,16 @@ export default function Home() {
         description="An IRL community experience"
       />
       {/* Section: Hero */}
-      <Section bg="fg" align="center" pt="5vmin">
+      <Section align="center" pt="8vmin" position="relative">
         {/* Section content */}
-        <Flex direction="column" gap={4} alignItems="center">
+        <Flex direction="column" gap={0} alignItems="center">
           {/* COSTA RICA text image */}
+          <Image
+            src="/assets/title-logo.svg"
+            width="clamp(200px, 90%, 800px)"
+            alt="MetaCamp logo"
+            zIndex={2}
+          />
           <Image
             src="/assets/costa-rica.svg"
             width="clamp(100px, 40%, 290px)"
@@ -22,39 +28,55 @@ export default function Home() {
             alt="Costa Rica text"
             zIndex={2}
           />
-          <Image
-            src="/assets/title-logo.svg"
-            width="clamp(200px, 90%, 800px)"
-            alt="MetaCamp logo"
-            zIndex={2}
-          />
-          <Button
+          <Button // TODO: Will likely be a link
             bg="primary"
             color="fg"
             fontSize="xl"
             zIndex={2}
             textTransform="uppercase"
             p={8}
+            mt={12}
             borderRadius="2xl"
-            maxW="265px" // TODO: Magic number
+            w="min(100%, 290px)" // TODO: Magic number
             isDisabled
           >
-            Coming soon!
+            Register
           </Button>
         </Flex>
         {/* Section background */}
-        <Box />
+        <Box h="min(34vw, 420px)" />
         <Image
-          src="/assets/hero-bg.svg"
+          src="/assets/hero-bg-layer-0.svg"
           objectFit="cover"
           objectPosition="left"
+          position="absolute"
+          bottom={0}
           w="full"
-          mt="-240px" // TODO: Magic number
+          alt="Beach background art"
+          zIndex={1}
+        />
+        <Image
+          src="/assets/hero-bg-layer-1.svg"
+          objectFit="cover"
+          objectPosition="left"
+          position="absolute"
+          bottom={0}
+          w="full"
+          alt="Beach background art"
+          zIndex={1}
+        />
+        <Image
+          src="/assets/hero-bg-layer-2.svg"
+          objectFit="cover"
+          objectPosition="left"
+          position="absolute"
+          bottom={-1}
+          w="full"
           alt="Beach background art"
           zIndex={1}
         />
       </Section>
-      {/* Section: Activities */}
+      {/* Section: Our vision and values */}
       <Section bg="primary" mt="-1px">
         {/* Section contents */}
         <Flex
@@ -65,13 +87,16 @@ export default function Home() {
         >
           <Flex direction="column" flex={1}>
             <Text as="h2" textStyle="heading">
-              Activities
+              Our vision and values
             </Text>
             <Text>
-              Bacon ipsum dolor amet chislic alcatra bacon tail short ribs
-              picanha, fatback ground round pork belly drumstick pork loin
-              tongue meatloaf turkey. Sausage ball tip turkey porchetta pork
-              chop. Salami pancetta shankle, ham
+              MetaCamp is the brain child of a globally diverse group of crypto
+              stewards, united by a shared ethos of collective world building,
+              community coherence, and holistic stimulation.
+            </Text>
+            <Text>
+              The outcome of this event is a profound sense of purpose, clarity,
+              and new connections with like minded and open hearted individuals.
             </Text>
           </Flex>
           <Grid
@@ -85,48 +110,92 @@ export default function Home() {
             minH="10rem" /* TODO: Fix once images present */
           >
             [Photo carousel]
-            <Image
-              src="/assets/maracas.svg"
-              position="absolute"
-              inset="auto -2rem -2rem auto"
-              alt="Festive maracas"
-              w="120px"
-            />
           </Grid>
         </Flex>
+      </Section>
+      {/* Wooden board sign */}
+      <Section bg="primary" position="relative">
+        {/* Section contents */}
+        <Box
+          h="min(50vw, 50rem)"
+          w="full"
+          zIndex={2}
+          pt={[2, 4, 8, 12]}
+        >
+        <Box
+          mx="auto"
+          bgImage="url(/assets/wood-sign-texture.svg)"
+          bgSize="cover"
+          bgRepeat="repeat"
+          px={12}
+          py={8}
+          w="fit-content"
+          boxShadow="0px 8px 0px 3px var(--chakra-colors-blackAlpha-500)"
+          position="relative"
+          _after={{
+            content: '""',
+            position: 'absolute',
+            bottom: "100%",
+            left: "5%",
+            bgImage: "url(/assets/bird.svg)",
+            bgRepeat: "no-repeat",
+            bgSize: "contain",
+            width: '3ch',
+            height: '3ch',
+            fontSize: ["lg", "xl", "3xl", "5xl"]
+          }}
+        >
+          <Text
+            fontFamily="callout"
+            maxW="53ch"
+            color="blackAlpha.700"
+            textAlign="center"
+            lineHeight="1.8"
+            fontSize={["lg", "xl", "3xl", "5xl"]}
+          >
+            Join us for 10 days of wild ranging conversations un-conference
+            sessions, playa excursions, fresh and local food prepared daily.
+          </Text>
+        </Box>
+        </Box>
         {/* Section background */}
         <Image
-          src="/assets/sand-bg.svg"
+          position="absolute"
+          bottom={0}
+          src="/assets/wood-sign-bg.svg"
           objectFit="cover"
           objectPosition="bottom"
           w="full"
           alt="Beach background art"
           zIndex={1}
-          mt="-240px" // TODO: Magic number
+          // mt="-140px" // TODO: Magic number
         />
       </Section>
       {/* Section: Timeline */}
-      <Section bg="secondary">
+      <Section bg="secondary" position="relative">
         {/* Section contents */}
         <Flex
-          gap={[8, null, 16]}
+          gap={8}
           p={[8, null, 16]}
           direction="column"
           zIndex={2}
         >
-          <Text as="h2" textStyle="heading">
-            Timeline of POAPS
+          <Text as="h2" textStyle="heading" textAlign="center">
+            MetaCamp Chronicles
           </Text>
           <Timeline />
         </Flex>
         {/* Section background */}
         <Image
-          src="/assets/grass-bg.svg"
+          src="/assets/grassy-divider.svg"
           objectFit="cover"
           objectPosition="bottom"
           w="full"
           alt="Beach background art"
           zIndex={1}
+          mt={-160}
+          // position="absolute"
+          // bottom={0}
         />
       </Section>
       {/* Section: Meet the campers */}
@@ -192,7 +261,7 @@ export default function Home() {
           w="full"
         >
           <Text as="h2" textStyle="heading" color="white" textAlign="center">
-            Project representation
+            Communities represented
           </Text>
           <Grid
             py={16}
