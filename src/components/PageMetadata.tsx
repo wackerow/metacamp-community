@@ -6,7 +6,7 @@ import {
   SITE_NAME,
   SITE_URL,
   TWITTER_HANDLE,
-} from '../../constants'
+} from '@/constants'
 
 interface Props {
   title: string

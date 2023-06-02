@@ -1,5 +1,5 @@
 import { Button, Flex, Image, Input, InputGroup, Text } from '@chakra-ui/react'
-import { Section } from './'
+import { Section } from '@/components'
 
 export const Footer: React.FC = () => (
   <Section bg="fg">

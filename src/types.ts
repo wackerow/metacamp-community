@@ -4,3 +4,9 @@ export interface CamperQuote {
   imageSrc: string
   quote: string
 }
+
+export interface Community {
+  name: string
+  href: string
+  imageSrc: string
+}
