@@ -1,32 +1,36 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import type { FlexProps } from '@chakra-ui/react'
-import type { CamperQuote } from '../../types'
+import type { CamperQuote } from '@/types'
 
 export interface CamperQuoteProps extends FlexProps {
   camper: CamperQuote
+  offset?: number
 }
-export const CamperQuoteCard: React.FC<CamperQuoteProps> = ({ camper, ...props }) => {
+export const CamperQuoteCard: React.FC<CamperQuoteProps> = ({
+  camper,
+  offset,
+  ...props
+}) => {
   const { author, association, imageSrc, quote } = camper
   return (
-    <Flex direction="column" align="center">
+    <Flex direction="column" align="center" mt={{ base: 0, lg: offset }}>
       <Box
         borderRadius="4rem"
         boxShadow="0 0 20px 0 black"
-        bg="white"
+        bg="gray.200"
         px={12}
         py={14}
-        mx={2}
         position="relative"
         _after={{
           content: `""`,
           position: 'absolute',
           top: '100%',
-          left: '42%',
+          left: ['45%', null, null, '25%'],
           width: '0',
           height: '0',
           borderLeft: '20px solid transparent',
           borderRight: '20px solid transparent',
-          borderTop: '24px solid white',
+          borderTop: '24px solid var(--chakra-colors-gray-200)',
         }}
         {...props}
       >
@@ -67,7 +71,12 @@ export const CamperQuoteCard: React.FC<CamperQuoteProps> = ({ camper, ...props }
             bgRepeat: 'no-repeat',
           }}
         />
-        <Flex direction="column" justify="center" fontFamily="quote" fontStyle="italic">
+        <Flex
+          direction="column"
+          justify="center"
+          fontFamily="quote"
+          fontStyle="italic"
+        >
           <Text fontWeight="bold">{author}</Text>
           <Text _before={{ content: "'~'", me: 2 }}>{association}</Text>
         </Flex>

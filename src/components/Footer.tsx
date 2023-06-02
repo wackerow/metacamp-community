@@ -1,10 +1,12 @@
-import { Button, Flex, Image, Input, InputGroup, Text } from '@chakra-ui/react'
+import { Flex, Image, Link, Text } from '@chakra-ui/react'
 import { Section } from '@/components'
+import { COMMUNITIES } from '@/constants'
 
 export const Footer: React.FC = () => (
-  <Section bg="fg">
+  <Section>
+    {/* Section background */}
     <Image
-      src="/assets/waves-bg.svg"
+      src="/assets/footer-waves.svg"
       objectFit="cover"
       objectPosition="top"
       w="full"
@@ -12,48 +14,42 @@ export const Footer: React.FC = () => (
       zIndex={1}
     />
     <Flex
+      gap={[8, null, 16]}
+      pt={24}
+      pb={32}
+      px={[6, 12, 24]}
       direction="column"
-      gap={6}
       zIndex={2}
-      alignItems="center"
-      mb={[16, 24, 32]}
-      mt={[-16, -24, -32]}
-      px={8}
+      w="full"
     >
-      <Image
-        src="/assets/chili-home.svg"
-        objectFit="cover"
-        objectPosition="top"
-        w="80px"
-        alt="Chili silhouette logo"
-      />
-
-      <Text fontFamily="body" color="white" fontWeight="normal">
-        Follow us
-      </Text>
-      <InputGroup
-        bg="white"
-        borderRadius="3xl"
-        mx={4}
-        maxW="lg"
-        h="fit-content"
-        display="flex"
-        gap={4}
-        p="3px"
-        alignItems="center"
+      <Text
+        as="h2"
+        textStyle="heading"
+        fontSize="2xl"
+        color="white"
+        textAlign="center"
       >
-        <Input type="email" placeholder="Email" bg="none" border="none" />
-        <Button
-          isDisabled
-          bg="primary"
-          color="fg"
-          borderRadius="2xl"
-          py={6}
-          px={10}
-        >
-          Newsletter me
-        </Button>
-      </InputGroup>
+        Communities represented
+      </Text>
+      <Flex
+        flexWrap="wrap"
+        gap={[4, null, 8]}
+        maxW="container.md"
+        mx="auto"
+        justify="center"
+      >
+        {COMMUNITIES.map(({ name, href, imageSrc }) => (
+          <Link key={name} href={href} isExternal>
+            <Image
+              src={imageSrc}
+              objectFit="contain"
+              w={40}
+              h={16}
+              alt={`${name} logo`}
+            />
+          </Link>
+        ))}
+      </Flex>
     </Flex>
   </Section>
 )

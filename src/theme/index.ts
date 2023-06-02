@@ -15,6 +15,7 @@ const overrides = {
       900: '#292F51', // "#1A365D",
     },
     gray: {
+      200: '#DDEBED',
       600: '#4A6164',
     },
   },
@@ -66,6 +67,7 @@ const overrides = {
       fontWeight: 'bold',
       fontSize: '4xl',
       color: 'fg',
+      letterSpacing: 'wider',
     },
     body: {
       fontFamily: 'body',

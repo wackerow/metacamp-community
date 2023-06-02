@@ -97,4 +97,16 @@ export const campers: Camper[] = [
   {
     image: 'camper-31.jpeg',
   },
+  {
+    image: 'camper-32.jpeg',
+  },
+  {
+    image: 'camper-33.jpeg',
+  },
+  {
+    image: 'camper-34.jpeg',
+  },
+  {
+    image: 'camper-35.jpeg',
+  },
 ]

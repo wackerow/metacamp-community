@@ -34,11 +34,11 @@ const data: TimelineItem[] = [
 ]
 
 export const Timeline: React.FC = () => {
-  const poapSize = 'min(180px, 40vw)'
+  const poapSize = 'min(180px, 30vw)'
   const overflow = '2rem'
   return (
     <Flex
-      direction={["column", null, null, "row"]}
+      direction={['column', null, null, 'row']}
       overflow="none"
       gap={8}
       justify="center"
@@ -47,15 +47,25 @@ export const Timeline: React.FC = () => {
       {data.map(({ year, label, href, src }) => (
         <Flex
           key={href}
-          direction={["row", null, null, "column"]}
+          direction={['row', null, null, 'column']}
           align="center"
           gap={8}
           position="relative"
           _after={{
             content: `""`,
             position: 'absolute',
-            left: [`calc(${poapSize} * 0.5)`, null, null, `calc(100% - ${overflow})`],
-            top: [`calc(100% - ${overflow})`, null, null, `calc(${poapSize} * 0.5)`],
+            left: [
+              `calc(${poapSize} * 0.5)`,
+              null,
+              null,
+              `calc(100% - ${overflow})`,
+            ],
+            top: [
+              `calc(100% - ${overflow})`,
+              null,
+              null,
+              `calc(${poapSize} * 0.5)`,
+            ],
             height: [`calc(4 * ${overflow})`, null, null, '10px'], // TODO: Magic number
             width: ['10px', null, null, `calc(4 * ${overflow})`],
             bg: 'secondary-dark',
@@ -73,10 +83,25 @@ export const Timeline: React.FC = () => {
             position="relative"
           />
           {/* TODO: Fix year font */}
-          <Flex direction="column" align={["start", null, null, "center"]} gap={[2, null, null, 8]} py={4}>
-            <Text fontSize="3xl" fontWeight="bold">{year}</Text>
+          <Flex
+            direction="column"
+            align={['start', null, null, 'center']}
+            gap={[2, null, null, 8]}
+            py={4}
+          >
+            <Text fontSize="3xl" fontWeight="bold">
+              {year}
+            </Text>
             <Link href={href} isExternal={href.startsWith('http')}>
-              <Box bg="white" borderRadius="2xl" py={4} px={8} fontSize="md" fontWeight="bold" maxW={['16ch', 'fit-content']}>
+              <Box
+                bg="white"
+                borderRadius="2xl"
+                py={4}
+                px={8}
+                fontSize="md"
+                fontWeight="bold"
+                maxW={['16ch', 'fit-content']}
+              >
                 {label}
               </Box>
             </Link>

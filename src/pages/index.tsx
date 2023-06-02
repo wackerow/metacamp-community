@@ -116,47 +116,42 @@ export default function Home() {
       {/* Wooden board sign */}
       <Section bg="primary" position="relative">
         {/* Section contents */}
-        <Box
-          h="min(50vw, 50rem)"
-          w="full"
-          zIndex={2}
-          pt={[2, 4, 8, 12]}
-        >
-        <Box
-          mx="auto"
-          bgImage="url(/assets/wood-sign-texture.svg)"
-          bgSize="cover"
-          bgRepeat="repeat"
-          px={12}
-          py={8}
-          w="fit-content"
-          boxShadow="0px 8px 0px 3px var(--chakra-colors-blackAlpha-500)"
-          position="relative"
-          _after={{
-            content: '""',
-            position: 'absolute',
-            bottom: "100%",
-            left: "5%",
-            bgImage: "url(/assets/bird.svg)",
-            bgRepeat: "no-repeat",
-            bgSize: "contain",
-            width: '3ch',
-            height: '3ch',
-            fontSize: ["lg", "xl", "3xl", "5xl"]
-          }}
-        >
-          <Text
-            fontFamily="callout"
-            maxW="53ch"
-            color="blackAlpha.700"
-            textAlign="center"
-            lineHeight="1.8"
-            fontSize={["lg", "xl", "3xl", "5xl"]}
+        <Box h="min(50vw, 50rem)" w="full" zIndex={2} pt={[2, 4, 8, 12]}>
+          <Box
+            mx="auto"
+            bgImage="url(/assets/wood-sign-texture.svg)"
+            bgSize="cover"
+            bgRepeat="repeat"
+            px={12}
+            py={8}
+            w="fit-content"
+            boxShadow="0px 8px 0px 3px var(--chakra-colors-blackAlpha-500)"
+            position="relative"
+            _after={{
+              content: '""',
+              position: 'absolute',
+              bottom: '100%',
+              left: '5%',
+              bgImage: 'url(/assets/bird.svg)',
+              bgRepeat: 'no-repeat',
+              bgSize: 'contain',
+              width: '3ch',
+              height: '3ch',
+              fontSize: ['lg', 'xl', '3xl', '5xl'],
+            }}
           >
-            Join us for 10 days of wild ranging conversations un-conference
-            sessions, playa excursions, fresh and local food prepared daily.
-          </Text>
-        </Box>
+            <Text
+              fontFamily="callout"
+              maxW="53ch"
+              color="blackAlpha.700"
+              textAlign="center"
+              lineHeight="1.8"
+              fontSize={['lg', 'xl', '3xl', '5xl']}
+            >
+              Join us for 10 days of wild ranging conversations un-conference
+              sessions, playa excursions, fresh and local food prepared daily.
+            </Text>
+          </Box>
         </Box>
         {/* Section background */}
         <Image
@@ -174,12 +169,7 @@ export default function Home() {
       {/* Section: Timeline */}
       <Section bg="secondary" position="relative">
         {/* Section contents */}
-        <Flex
-          gap={8}
-          p={[8, null, 16]}
-          direction="column"
-          zIndex={2}
-        >
+        <Flex gap={8} p={[8, null, 16]} direction="column" zIndex={2}>
           <Text as="h2" textStyle="heading" textAlign="center">
             MetaCamp Chronicles
           </Text>
@@ -198,70 +188,66 @@ export default function Home() {
       </Section>
       {/* Section: Meet the campers */}
       <Section bg="primary">
-        <Flex direction="column" gap={12}>
-          <Flex direction="column" gridArea="copy" textAlign="center">
+        <Flex direction="column" gap={[12, null, 16]}>
+          <Flex
+            direction="column"
+            gridArea="copy"
+            textAlign="center"
+            maxW="70ch"
+            mx="auto"
+            gap={4}
+          >
             <Text as="h2" textStyle="heading">
               Meet the campers
             </Text>
-            <Text>
-              Our campers are a self selected network of regenerative thinkers, digital nomads, DAO Architects, Spiritual Travelers, Solidity Dreamers, and Rabbit Hole Inspectors.
+            <Text lineHeight="1.85">
+              Our campers are a self selected network of regenerative thinkers,
+              digital nomads, DAO Architects, Spiritual Travelers, Solidity
+              Dreamers, and Rabbit Hole Inspectors.
             </Text>
-            <Text fontWeight="bold">Here is what they are saying about MetaCamp:</Text>
+            <Text fontWeight="bold">
+              Here is what they are saying about MetaCamp:
+            </Text>
           </Flex>
-          <CampersPreview /* gridArea="campers" */ />
-          {/* <CamperQuote /> */}
+          <CampersPreview />
+          <Box
+            bgImage="url(/assets/sombrero.svg)"
+            bgRepeat="no-repeat"
+            aria-label="Sombrero"
+            w="full"
+            maxW="16rem"
+            sx={{ aspectRatio: '2' }}
+            bgSize="contain"
+            mx="auto"
+            mt={{ base: 0, lg: -32 }}
+          />
           <Button
             as="a"
             href="#"
             gridArea="button"
             bg="white"
             color="fg"
-            fontSize="xl"
+            fontSize={{ base: 'md', lg: 'xl' }}
             zIndex={2}
             textTransform="uppercase"
-            py={8}
-            px={16}
-            mx={['auto', null]}
+            py={[6, null, 8]}
+            px={[2, 8, 16]}
+            mx={[8, 'auto']}
             borderRadius="2xl"
-            w={['100%', 'fit-content']}
+            w={['fit-container', 'fit-content']}
           >
             Meet some campers!
           </Button>
         </Flex>
-      </Section>
-      {/* Section: Representation */}
-      <Section bg="primary-dark">
         {/* Section background */}
         <Image
-          src="/assets/curve-bg.svg"
+          src="/assets/footer-shore.svg"
           objectFit="cover"
           objectPosition="top"
           w="full"
           alt="Beach background art"
           zIndex={1}
-          mt="-1px" // TODO: Magic number
         />
-        <Flex
-          gap={[8, null, 16]}
-          p={[8, null, 16]}
-          direction="column"
-          zIndex={2}
-          w="full"
-        >
-          <Text as="h2" textStyle="heading" color="white" textAlign="center">
-            Communities represented
-          </Text>
-          <Grid
-            py={16}
-            px={8}
-            bg="fg"
-            borderRadius="2xl"
-            color="#6F85F2"
-            placeItems="center"
-          >
-            <Text textAlign="center">[Community/DAO representation]</Text>
-          </Grid>
-        </Flex>
       </Section>
     </>
   )
