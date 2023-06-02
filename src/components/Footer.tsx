@@ -22,13 +22,7 @@ export const Footer: React.FC = () => (
       zIndex={2}
       w="full"
     >
-      <Text
-        as="h2"
-        textStyle="heading"
-        fontSize="2xl"
-        color="white"
-        textAlign="center"
-      >
+      <Text as="h2" textStyle="heading" color="white" textAlign="center">
         Communities represented
       </Text>
       <Flex

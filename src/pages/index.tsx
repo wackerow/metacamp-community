@@ -77,11 +77,16 @@ export default function Home() {
         />
       </Section>
       {/* Section: Our vision and values */}
-      <Section bg="primary" mt="-1px">
+      <Section
+        bg="primary"
+        bgImage="url(/assets/sand-texture.svg)"
+        bgRepeat="repeat"
+      >
         {/* Section contents */}
         <Flex
           gap={[8, null, null, 12]}
-          p={[8, null, null, 16]}
+          px={[8, null, null, 16]}
+          py={[16, 20, 24]}
           zIndex={2}
           direction={['column', null, null, 'row']}
         >
@@ -114,7 +119,12 @@ export default function Home() {
         </Flex>
       </Section>
       {/* Wooden board sign */}
-      <Section bg="primary" position="relative">
+      <Section
+        bg="primary"
+        bgImage="url(/assets/sand-texture.svg)"
+        bgRepeat="repeat"
+        position="relative"
+      >
         {/* Section contents */}
         <Box h="min(50vw, 50rem)" w="full" zIndex={2} pt={[2, 4, 8, 12]}>
           <Box
@@ -183,18 +193,26 @@ export default function Home() {
           w="full"
           alt="Beach background art"
           zIndex={1}
-          mt={-160}
+          mt={[0, null, -20, -120]}
         />
       </Section>
       {/* Section: Meet the campers */}
-      <Section bg="primary">
-        <Flex direction="column" gap={[12, null, 16]}>
+      <Section
+        bg="primary"
+        bgImage="url(/assets/sand-texture.svg)"
+        bgRepeat="repeat"
+      >
+        <Flex
+          direction="column"
+          gap={[12, null, 16]}
+          alignItems="center"
+          px={[4, 6, 8]}
+        >
           <Flex
             direction="column"
             gridArea="copy"
             textAlign="center"
             maxW="70ch"
-            mx="auto"
             gap={4}
           >
             <Text as="h2" textStyle="heading">
@@ -246,7 +264,7 @@ export default function Home() {
           objectPosition="top"
           w="full"
           alt="Beach background art"
-          zIndex={1}
+          zIndex={2}
         />
       </Section>
     </>
