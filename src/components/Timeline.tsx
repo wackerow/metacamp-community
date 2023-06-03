@@ -93,17 +93,19 @@ export const Timeline: React.FC = () => {
               {year}
             </Text>
             <Link href={href} isExternal={href.startsWith('http')}>
-              <Box
+              <Flex
                 bg="white"
                 borderRadius="2xl"
                 py={4}
                 px={8}
                 fontSize="md"
                 fontWeight="bold"
-                maxW={['16ch', 'fit-content']}
+                w={['full', 'fit-content']}
+                justify="center"
+                textAlign="center"
               >
                 {label}
-              </Box>
+              </Flex>
             </Link>
           </Flex>
         </Flex>
