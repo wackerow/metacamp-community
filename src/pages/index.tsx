@@ -1,8 +1,28 @@
+import { GetStaticProps } from 'next'
+import { readdirSync } from 'fs'
+import path from 'path'
+
 import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { CampersPreview, PageMetadata, Section, Timeline } from '@/components'
+import {
+  CampersPreview,
+  PageMetadata,
+  PhotoCarousel,
+  Section,
+  Timeline,
+} from '@/components'
+import { PHOTO_CAROUSEL_IMAGES_DIR } from '@/constants'
+import type { PhotoProps } from '@/types'
 
-export default function Home() {
+export const getStaticProps: GetStaticProps = async () => {
+  const photosPath = path.join('public', PHOTO_CAROUSEL_IMAGES_DIR)
+  const photos = readdirSync(photosPath).map(
+    (file) => `${PHOTO_CAROUSEL_IMAGES_DIR}/${file}`
+  )
+  return { props: { photos } }
+}
+
+const Home: React.FC<PhotoProps> = ({ photos }) => {
   return (
     <>
       {/* Metadata */}
@@ -88,9 +108,14 @@ export default function Home() {
           px={[8, null, null, 16]}
           py={[16, 20, 24]}
           zIndex={2}
-          direction={['column', null, null, 'row']}
+          direction={['column', null, null, null, 'row']}
         >
-          <Flex direction="column" flex={1}>
+          <Flex
+            direction="column"
+            maxW="50ch"
+            textAlign={['center', null, null, null, 'start']}
+            gap={4}
+          >
             <Text as="h2" textStyle="heading">
               Our vision and values
             </Text>
@@ -104,18 +129,7 @@ export default function Home() {
               and new connections with like minded and open hearted individuals.
             </Text>
           </Flex>
-          <Grid
-            flex={1}
-            h="fit-container"
-            bg="fg"
-            borderRadius="2xl"
-            color="#6F85F2"
-            placeItems="center"
-            position="relative"
-            minH="10rem" /* TODO: Fix once images present */
-          >
-            [Photo carousel]
-          </Grid>
+          <PhotoCarousel photos={photos} />
         </Flex>
       </Section>
       {/* Wooden board sign */}
@@ -270,3 +284,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

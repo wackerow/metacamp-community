@@ -10,3 +10,9 @@ export interface Community {
   href: string
   imageSrc: string
 }
+
+export type Photos = string[]
+
+export interface PhotoProps {
+  photos: Photos
+}
