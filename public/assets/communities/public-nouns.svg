@@ -1,0 +1,72 @@
+<svg width="190" height="70" viewBox="0 0 190 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_637_1116)">
+<mask id="mask0_637_1116" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="190" height="70">
+<path d="M190 0H0V70H190V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_637_1116)">
+<path d="M10 10H0V20H10V10Z" fill="white"/>
+<path d="M10 0H0V10H10V0Z" fill="white"/>
+<path d="M10 20H0V30H10V20Z" fill="white"/>
+<path d="M20 10H10V20H20V10Z" fill="white"/>
+<path d="M20 0H10V10H20V0Z" fill="white"/>
+<path d="M180 40H170V50H180V40Z" fill="white"/>
+<path d="M80 10H70V20H80V10Z" fill="white"/>
+<path d="M80 0H70V10H80V0Z" fill="white"/>
+<path d="M180 10H170V20H180V10Z" fill="white"/>
+<path d="M180 50H170V60H180V50Z" fill="white"/>
+<path d="M80 20H70V30H80V20Z" fill="white"/>
+<path d="M90 20H80V30H90V20Z" fill="white"/>
+<path d="M120 20H110V30H120V20Z" fill="white"/>
+<path d="M160 20H150V30H160V20Z" fill="white"/>
+<path d="M100 20H90V30H100V20Z" fill="white"/>
+<path d="M100 10H90V20H100V10Z" fill="white"/>
+<path d="M130 20H120V30H130V20Z" fill="white"/>
+<path d="M140 20H130V30H140V20Z" fill="white"/>
+<path d="M180 0H170V10H180V0Z" fill="white"/>
+<path d="M190 0H180V10H190V0Z" fill="white"/>
+<path d="M190 40H180V50H190V40Z" fill="white"/>
+<path d="M180 20H170V30H180V20Z" fill="white"/>
+<path d="M190 20H180V30H190V20Z" fill="white"/>
+<path d="M90 10H80V20H90V10Z" fill="white"/>
+<path d="M90 0H80V10H90V0Z" fill="white"/>
+<path d="M120 10H110V20H120V10Z" fill="white"/>
+<path d="M120 0H110V10H120V0Z" fill="white"/>
+<path d="M160 10H150V20H160V10Z" fill="white"/>
+<path d="M160 0H150V10H160V0Z" fill="white"/>
+<path d="M40 10H30V20H40V10Z" fill="white"/>
+<path d="M40 0H30V10H40V0Z" fill="white"/>
+<path d="M60 0H50V10H60V0Z" fill="white"/>
+<path d="M40 20H30V30H40V20Z" fill="white"/>
+<path d="M50 20H40V30H50V20Z" fill="white"/>
+<path d="M60 20H50V30H60V20Z" fill="white"/>
+<path d="M60 10H50V20H60V10Z" fill="white"/>
+<path d="M10 40H0V50H10V40Z" fill="white"/>
+<path d="M10 50H0V60H10V50Z" fill="white"/>
+<path d="M30 50H20V60H30V50Z" fill="white"/>
+<path d="M40 50H30V60H40V50Z" fill="white"/>
+<path d="M40 40H30V50H40V40Z" fill="white"/>
+<path d="M20 40H10V50H20V40Z" fill="white"/>
+<path d="M130 40H120V50H130V40Z" fill="white"/>
+<path d="M130 50H120V60H130V50Z" fill="white"/>
+<path d="M180 70H190V60H180V70Z" fill="white"/>
+<path d="M150 50H140V60H150V50Z" fill="white"/>
+<path d="M160 50H150V60H160V50Z" fill="white"/>
+<path d="M160 40H150V50H160V40Z" fill="white"/>
+<path d="M140 40H130V50H140V40Z" fill="white"/>
+<path d="M60 40H50V50H60V40Z" fill="white"/>
+<path d="M60 50H50V60H60V50Z" fill="white"/>
+<path d="M70 40H60V50H70V40Z" fill="white"/>
+<path d="M90 40H80V50H90V40Z" fill="white"/>
+<path d="M90 50H80V60H90V50Z" fill="white"/>
+<path d="M100 50H90V60H100V50Z" fill="white"/>
+<path d="M110 50H100V60H110V50Z" fill="white"/>
+<path d="M110 40H100V50H110V40Z" fill="white"/>
+<path d="M70 50H60V60H70V50Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_637_1116">
+<rect width="190" height="70" fill="white"/>
+</clipPath>
+</defs>
+</svg>
