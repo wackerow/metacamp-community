@@ -132,7 +132,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           <PhotoCarousel photos={photos} />
         </Flex>
       </Section>
-      {/* Wooden board sign */}
+      {/* Wood board sign */}
       <Section
         bg="primary"
         bgImage="url(/assets/sand-texture.svg)"
@@ -141,24 +141,46 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
       >
         {/* Section background */}
         <Image
+          display={{ base: 'none', md: 'block' }}
           position="absolute"
           bottom={0}
           src="/assets/wood-sign-bg.svg"
           objectFit="cover"
-          objectPosition="bottom"
+          objectPosition="top"
           w="full"
           alt="Beach background art"
           zIndex={1}
-          // mt="-140px" // TODO: Magic number
+        />
+        <Image
+          display={{ base: 'block', md: 'none' }}
+          position="absolute"
+          bottom={0}
+          src="/assets/wood-sign-mobile-bg.svg"
+          objectFit="cover"
+          objectPosition="top"
+          w="full"
+          alt="Beach background art"
+          zIndex={1}
         />
         {/* Section contents */}
-        <Box h="min(50vw, 50rem)" w="full" zIndex={2} pt={[2, 4, 8, 12]}>
+        <Flex
+          direction="column"
+          alignItems="center"
+          h={{
+            base: "min(100vh, 100rem)",
+            md: "min(50vmax, 75rem)"
+          }}
+          w="full"
+          zIndex={2}
+          pt={{ base: '12rem', sm: '0rem', md: '0rem', lg: '6rem'}}
+          mt={{ base: '-8rem', sm: '4rem', md: '4rem', lg: '3rem'}}
+        >
           <Box
-            mx="auto"
+            mx={16}
             bgImage="url(/assets/wood-sign-texture.svg)"
-            bgSize="cover"
+            bgSize="contain"
             bgRepeat="repeat"
-            px={12}
+            px={{ base: 6, sm: 12 }}
             py={8}
             w="fit-content"
             boxShadow="0px 8px 0px 3px var(--chakra-colors-blackAlpha-500)"
@@ -174,7 +196,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
               bgSize: 'contain',
               width: '3ch',
               height: '3ch',
-              fontSize: ['lg', 'xl', '3xl', '5xl'],
+              fontSize: { base: '3xl', lg: '5xl' },
             }}
           >
             <Text
@@ -183,15 +205,17 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
               color="blackAlpha.700"
               textAlign="center"
               lineHeight="1.8"
-              fontSize={['lg', 'xl', '3xl', '5xl']}
+              fontSize={['3xl', '4xl', '4xl', '5xl']}
+              // fontSize={{ base: '3xl', lg: '5xl' }}
             >
               Join us for 10 days of wild ranging conversations un-conference
               sessions, playa excursions, fresh and local food prepared daily.
             </Text>
           </Box>
-        </Box>
+        </Flex>
         {/* Section foreground */}
         <Image
+          display={{ base: 'none', md: 'block' }}
           position="absolute"
           bottom={0}
           src="/assets/wood-sign-fg.svg"
@@ -200,7 +224,17 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           w="full"
           alt="Beach background art"
           zIndex={3}
-          // mt="-140px" // TODO: Magic number
+        />
+        <Image
+          display={{ base: 'block', md: 'none' }}
+          position="absolute"
+          bottom={0}
+          src="/assets/wood-sign-mobile-fg.svg"
+          objectFit="cover"
+          objectPosition="bottom"
+          w="full"
+          alt="Beach background art"
+          zIndex={3}
         />
       </Section>
       {/* Section: Timeline */}
