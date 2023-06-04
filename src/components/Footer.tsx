@@ -15,7 +15,7 @@ export const Footer: React.FC = () => (
     />
     <Flex
       gap={[8, null, 16]}
-      pt={24}
+      pt={8}
       pb={32}
       px={[6, 12, 24]}
       direction="column"
@@ -27,17 +27,17 @@ export const Footer: React.FC = () => (
       </Text>
       <Flex
         flexWrap="wrap"
-        gap={[4, null, 8]}
+        gap={12}
         maxW="container.md"
         mx="auto"
         justify="center"
       >
-        {COMMUNITIES.map(({ name, href, imageSrc }) => (
+        {COMMUNITIES.sort(() => Math.random() - 0.5).map(({ name, href, imageSrc }) => (
           <Link key={name} href={href} isExternal>
             <Image
               src={imageSrc}
               objectFit="contain"
-              w={40}
+              w={48}
               h={16}
               alt={`${name} logo`}
             />

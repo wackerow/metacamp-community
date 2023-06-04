@@ -84,6 +84,66 @@ export const COMMUNITIES: Community[] = [
     href: 'https://debtdao.finance/',
     imageSrc: 'debtdao.svg',
   },
+  {
+    name: 'Gitcoin',
+    href: 'https://gitcoin.co/',
+    imageSrc: 'gitcoin.svg',
+  },
+  {
+    name: 'MetaCartel Ventures',
+    href: 'https://metacartel.xyz/',
+    imageSrc: 'metacartel-ventures.svg',
+  },
+  {
+    name: 'Giveth',
+    href: 'https://giveth.io/',
+    imageSrc: 'giveth.svg',
+  },
+  {
+    name: 'Protocol Labs',
+    href: 'https://protocol.ai/',
+    imageSrc: 'protocol-labs.svg',
+  },
+  {
+    name: 'Public Nouns',
+    href: 'https://publicnouns.wtf/',
+    imageSrc: 'public-nouns.svg',
+  },
+  {
+    name: 'Hats',
+    href: 'https://www.hatsprotocol.xyz/',
+    imageSrc: 'hats.png',
+  },
+  {
+    name: 'MetaFactory',
+    href: 'https://metafactory.ai/',
+    imageSrc: 'metafactory.svg',
+  },
+  {
+    name: 'WGMI',
+    href: 'https://wgmi.community/',
+    imageSrc: 'wgmi.svg',
+  },
+  {
+    name: 'Raid Brood',
+    href: 'https://brood.raidguild.org/',
+    imageSrc: 'raid-brood.svg',
+  },
+  // {
+  //   name: 'GM Bus',
+  //   href: '#',
+  //   imageSrc: 'gm-bus.svg',
+  // },
+  {
+    name: 'Snapshot',
+    href: 'https://snapshot.org/#/',
+    imageSrc: 'snapshot.svg',
+  },
+  {
+    name: 'Cultur3',
+    href: 'https://cultur3.capital/',
+    imageSrc: 'cultur3.svg',
+  },
 ].map(({ imageSrc, ...rest }) => ({
   imageSrc: `${COMMUNITIES_LOGOS_DIR}${imageSrc}`,
   ...rest,
