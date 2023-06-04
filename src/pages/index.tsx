@@ -215,12 +215,13 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
         bg="primary"
         bgImage="url(/assets/sand-texture.svg)"
         bgRepeat="repeat"
+        pt={[8, null, 0]}
       >
         <Flex
           direction="column"
           gap={[12, null, 16]}
           alignItems="center"
-          px={[4, 6, 8]}
+          px={[6, null, 8]}
         >
           <Flex
             direction="column"
@@ -242,34 +243,6 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
             </Text>
           </Flex>
           <CampersPreview />
-          <Box
-            bgImage="url(/assets/sombrero.svg)"
-            bgRepeat="no-repeat"
-            aria-label="Sombrero"
-            w="full"
-            maxW="16rem"
-            sx={{ aspectRatio: '2' }}
-            bgSize="contain"
-            mx="auto"
-            mt={{ base: 0, lg: -32 }}
-          />
-          <Button
-            as="a"
-            href="#"
-            gridArea="button"
-            bg="white"
-            color="fg"
-            fontSize={{ base: 'md', lg: 'xl' }}
-            zIndex={2}
-            textTransform="uppercase"
-            py={[6, null, 8]}
-            px={[2, 8, 16]}
-            mx={[8, 'auto']}
-            borderRadius="2xl"
-            w={['fit-container', 'fit-content']}
-          >
-            Meet some campers!
-          </Button>
         </Flex>
         {/* Section background */}
         <Image

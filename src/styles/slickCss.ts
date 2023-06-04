@@ -1,15 +1,6 @@
 import { css } from '@emotion/react'
 
 export const slickCss = css`
-  .slick-list {
-    /* outline: 1px solid orange; */
-    /* width: fit-content; */
-    max-width: 640px;
-  }
-  .slick-track {
-    /* outline: 1px solid green; */
-    /* width: fit-content; */
-  }
   .slick-list,
   .slick-slider,
   .slick-track {
@@ -97,6 +88,11 @@ export const slickCss = css`
   .slick-loading .slick-list {
     background: url('ajax-loader.gif') center center no-repeat #fff;
   }
-  .slick-list {
+
+  .slick-list,
+  .slick-slider,
+  .slick-initialized {
+    max-width: min(100%, var(--chakra-sizes-container-sm));
+    height: fit-content;
   }
 `

@@ -3,6 +3,7 @@ export interface CamperQuote {
   association: string
   imageSrc: string
   quote: string
+  area: string
 }
 
 export interface Community {

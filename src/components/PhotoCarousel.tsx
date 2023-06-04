@@ -18,10 +18,9 @@ interface NavIconProps {
   isNext?: boolean
 }
 const NavIcon: FC<NavIconProps> = ({ slider, isNext }) => {
-  // const bottom = useBreakpointValue({ base: '10px', md: '40%' })
   const bottom = useBreakpointValue({ base: '10px', md: '1rem' })
   const side = useBreakpointValue({ base: '30%', md: '1rem' })
-  // const side = useBreakpointValue({ base: '30%', md: '10px' })
+
   const props: IconButtonProps = {
     position: 'absolute',
     bottom,
@@ -37,18 +36,22 @@ const NavIcon: FC<NavIconProps> = ({ slider, isNext }) => {
   }
   isNext ? (props.insetEnd = side) : (props.insetStart = side)
 
-  return <IconButton {...props} />
+  return (
+    <IconButton
+      _active={{ outline: '2px solid white', outlineOffset: '2px' }}
+      _hover={{ bg: 'whiteAlpha.500' }}
+      {...props}
+    />
+  )
 }
 
 type PhotoCarouselProps = BoxProps & PhotoProps
 export const PhotoCarousel: FC<PhotoCarouselProps> = ({ photos, ...props }) => {
   const [slider, setSlider] = useState<Slider | null>(null)
 
+  useBreakpointValue({})
   // Settings for the Slider component
   const settings: Settings = {
-    // dots: true,
-    // dotsClass: 'slick-dots slick-thumb',
-    // arrows: true,
     fade: true,
     infinite: true,
     autoplay: true,
@@ -59,60 +62,34 @@ export const PhotoCarousel: FC<PhotoCarouselProps> = ({ photos, ...props }) => {
     swipeToSlide: true,
     prevArrow: <NavIcon slider={slider} />,
     nextArrow: <NavIcon slider={slider} isNext />,
-    appendDots: (dots) => (
-      <Box
-        position="absolute"
-        bottom="10px"
-        w="100%"
-        display="flex"
-        justifyContent="center"
-      >
-        <Box
-          bg="white"
-          borderRadius="50%"
-          w="1rem"
-          h="1rem"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          boxShadow="0px 0px 5px 0px rgba(0,0,0,0.75)"
-        >
-          {dots}
-        </Box>
-      </Box>
-    ),
   }
 
   return (
     <Flex
       position="relative"
-      css={slickCss}
-      // overflowX="hidden"
       sx={{ aspectRatio: 16 / 9 }}
-      // maxH={["30rem", null, "20rem"]}
-      // overflow="hidden"
-      // outline="2px solid red"
-      // maxW="640px"
-      h="360px"
+      maxW="min(100%, var(--chakra-sizes-container-sm))"
+      css={slickCss}
       {...props}
     >
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {photos?.map((url) => (
-          <Image
-            key={url}
-            src={url}
-            objectFit="cover"
-            objectPosition="center"
-            // w="clamp(min(100%, 300px), 50%, 640px)"
-            maxW="640px"
-            maxH="360px"
-            h="100%"
-            w="100%"
-            // maxH="100%"
-            // maxW="100%"
-            alt="Photo"
-          />
-        ))}
+        {photos
+          ?.sort((url) =>
+            url.includes('coconut.png') ? -1 : Math.random() - 0.5
+          )
+          .map((url) => (
+            <Image
+              key={url}
+              src={url}
+              objectFit="cover"
+              objectPosition="center"
+              maxW="min(100%, var(--chakra-sizes-container-sm))"
+              maxH="360px"
+              h="100%"
+              w="100%"
+              alt="Photo"
+            />
+          ))}
       </Slider>
     </Flex>
   )
