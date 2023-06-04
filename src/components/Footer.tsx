@@ -27,7 +27,8 @@ export const Footer: React.FC = () => (
       </Text>
       <Flex
         flexWrap="wrap"
-        gap={12}
+        columnGap={16}
+        rowGap={8}
         maxW="container.md"
         mx="auto"
         justify="center"

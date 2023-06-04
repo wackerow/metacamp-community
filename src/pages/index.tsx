@@ -139,6 +139,18 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
         bgRepeat="repeat"
         position="relative"
       >
+        {/* Section background */}
+        <Image
+          position="absolute"
+          bottom={0}
+          src="/assets/wood-sign-bg.svg"
+          objectFit="cover"
+          objectPosition="bottom"
+          w="full"
+          alt="Beach background art"
+          zIndex={1}
+          // mt="-140px" // TODO: Magic number
+        />
         {/* Section contents */}
         <Box h="min(50vw, 50rem)" w="full" zIndex={2} pt={[2, 4, 8, 12]}>
           <Box
@@ -150,6 +162,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
             py={8}
             w="fit-content"
             boxShadow="0px 8px 0px 3px var(--chakra-colors-blackAlpha-500)"
+            zIndex={2}
             position="relative"
             _after={{
               content: '""',
@@ -177,23 +190,23 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
             </Text>
           </Box>
         </Box>
-        {/* Section background */}
+        {/* Section foreground */}
         <Image
           position="absolute"
           bottom={0}
-          src="/assets/wood-sign-bg.svg"
+          src="/assets/wood-sign-fg.svg"
           objectFit="cover"
           objectPosition="bottom"
           w="full"
           alt="Beach background art"
-          zIndex={1}
+          zIndex={3}
           // mt="-140px" // TODO: Magic number
         />
       </Section>
       {/* Section: Timeline */}
       <Section bg="secondary" position="relative">
         {/* Section contents */}
-        <Flex gap={8} p={[8, null, 16]} direction="column" zIndex={2}>
+        <Flex gap={8} p={[6, 8, 16]} direction="column" zIndex={2}>
           <Text as="h2" textStyle="heading" textAlign="center">
             MetaCamp Chronicles
           </Text>

@@ -18,29 +18,25 @@ interface NavIconProps {
   isNext?: boolean
 }
 const NavIcon: FC<NavIconProps> = ({ slider, isNext }) => {
-  const bottom = useBreakpointValue({ base: '10px', md: '1rem' })
-  const side = useBreakpointValue({ base: '30%', md: '1rem' })
-
-  const props: IconButtonProps = {
-    position: 'absolute',
-    bottom,
-    color: 'white',
-    variant: 'outline',
-    zIndex: 1,
-    'aria-label': isNext ? 'Next slide' : 'Previous slide',
-    icon: isNext ? <ArrowForwardIcon /> : <ArrowBackIcon />,
-    onClick: () => (isNext ? slider?.slickNext() : slider?.slickPrev()),
-    p: 0,
-    w: '4rem',
-    h: '2rem',
-  }
-  isNext ? (props.insetEnd = side) : (props.insetStart = side)
-
+  const bottom = 4
+  const side = 6
+  const conditionalProps = isNext ? { insetEnd: side } : { insetStart: side }
   return (
     <IconButton
       _active={{ outline: '2px solid white', outlineOffset: '2px' }}
       _hover={{ bg: 'whiteAlpha.500' }}
-      {...props}
+      position="absolute"
+      bottom={bottom}
+      color='white'
+      variant='outline'
+      zIndex={1}
+      aria-label={isNext ? 'Next slide' : 'Previous slide'}
+      icon={isNext ? <ArrowForwardIcon /> : <ArrowBackIcon />}
+      p={0}
+      w={16}
+      h={8}
+      onClick={() => (isNext ? slider?.slickNext() : slider?.slickPrev())}
+      {...conditionalProps}
     />
   )
 }
@@ -82,7 +78,6 @@ export const PhotoCarousel: FC<PhotoCarouselProps> = ({ photos, ...props }) => {
               key={url}
               src={url}
               objectFit="cover"
-              objectPosition="center"
               maxW="min(100%, var(--chakra-sizes-container-sm))"
               maxH="360px"
               h="100%"

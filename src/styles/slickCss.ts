@@ -92,7 +92,11 @@ export const slickCss = css`
   .slick-list,
   .slick-slider,
   .slick-initialized {
-    max-width: min(100%, var(--chakra-sizes-container-sm));
-    height: fit-content;
+    max-width: min(calc(100vw - 4rem), var(--chakra-sizes-container-sm));
+    aspect-ratio: 16/9;
+    border-radius: var(--chakra-radii-xl);
+    object-fit: contain;
+    outline: 4px solid #00000020;
+    outline-offset: 2px;
   }
 `

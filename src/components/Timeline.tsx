@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Link, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, Link, Text } from '@chakra-ui/react'
 
 interface TimelineItem {
   year: number
@@ -35,70 +35,79 @@ const data: TimelineItem[] = [
 
 export const Timeline: React.FC = () => {
   const poapSize = 'min(180px, 30vw)'
-  const overflow = '2rem'
+  const overflow = '1rem'
   return (
-    <Flex
-      direction={['column', null, null, 'row']}
-      overflow="none"
-      gap={8}
-      justify="center"
-      maxW="100%"
+    <Grid
+      templateAreas={{
+        base: `
+          "poap-2021 label-2021"
+          "poap-2022 label-2022"
+          "poap-2023 label-2023"
+          "poap-2024 label-2024"
+        `,
+        lg: `
+          "poap-2021 poap-2022 poap-2023 poap-2024"
+          "label-2021 label-2022 label-2023 label-2024"
+        `,
+      }}
+      rowGap={{ base: 6, lg: 12}}
+      columnGap={{ base: 6, lg: 12}}
     >
-      {data.map(({ year, label, href, src }) => (
-        <Flex
-          key={href}
-          direction={['row', null, null, 'column']}
-          align="center"
-          gap={8}
-          position="relative"
-          _after={{
-            content: `""`,
-            position: 'absolute',
-            left: [
-              `calc(${poapSize} * 0.5)`,
-              null,
-              null,
-              `calc(100% - ${overflow})`,
-            ],
-            top: [
-              `calc(100% - ${overflow})`,
-              null,
-              null,
-              `calc(${poapSize} * 0.5)`,
-            ],
-            height: [`calc(4 * ${overflow})`, null, null, '10px'], // TODO: Magic number
-            width: ['10px', null, null, `calc(4 * ${overflow})`],
-            bg: 'secondary-dark',
-            zIndex: -1,
-          }}
-          _last={{ _after: { display: 'none' } }}
-        >
+      {data.map(({ year, label, href, src }, i) => (
+        <>
           <Box
+            key={href}
+            gridArea={`poap-${year}`}
             borderRadius="full"
             w={poapSize}
             h={poapSize}
+            sx={{ aspectRatio: '1' }}
             aria-label={`POAP for ${data[0].year}`}
             bgImage={`url(/assets/${src})`}
             bgSize="contain"
             position="relative"
+            alignItems="center"
+            _after={{
+              content: `""`,
+              display: i === data.length - 1 ? 'none' : 'block',
+              position: 'absolute',
+              left: [
+                `calc(${poapSize} * 0.5 - 5px)`,
+                null,
+                null,
+                `calc(100% - ${overflow})`,
+              ],
+              top: [
+                `calc(100% - ${overflow})`,
+                null,
+                null,
+                `calc(${poapSize} * 0.5 - 5px)`,
+              ],
+              height: { base: `calc(4 * ${overflow})`, lg: '10px' }, // TODO: Magic number
+              width: { base: '10px', lg: `calc(4 * ${overflow})` },
+              bg: 'secondary-dark',
+              zIndex: -1,
+            }}
           />
           {/* TODO: Fix year font */}
           <Flex
+            key={href}
+            gridArea={`label-${year}`}
             direction="column"
-            align={['start', null, null, 'center']}
-            gap={[2, null, null, 8]}
-            py={4}
+            align={{ base: 'start', lg: 'center' }}
+            gap={{ base: 2, lg: 8 }}
+            my="auto"
           >
-            <Text fontSize="3xl" fontWeight="bold">
+            <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" fontFamily="mono">
               {year}
             </Text>
             <Link href={href} isExternal={href.startsWith('http')}>
               <Flex
                 bg="white"
                 borderRadius="2xl"
-                py={4}
-                px={8}
-                fontSize="md"
+                py={[3, 4]}
+                px={[6, 8]}
+                fontSize={["sm", "md"]}
                 fontWeight="bold"
                 w={['full', 'fit-content']}
                 justify="center"
@@ -108,8 +117,8 @@ export const Timeline: React.FC = () => {
               </Flex>
             </Link>
           </Flex>
-        </Flex>
+        </>
       ))}
-    </Flex>
+    </Grid>
   )
 }
