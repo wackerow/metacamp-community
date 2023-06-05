@@ -34,13 +34,19 @@ export const Footer: React.FC = () => (
         justify="center"
       >
         {COMMUNITIES.sort(() => Math.random() - 0.5).map(({ name, href, imageSrc }) => (
-          <Link key={name} href={href} isExternal>
+          <Link key={name} href={href} isExternal data-group>
             <Image
               src={imageSrc}
               objectFit="contain"
               w={48}
               h={16}
               alt={`${name} logo`}
+              transform="scale(1)"
+              _groupHover={{
+                transform: 'scale(1.1)',
+                transition: 'transform 200ms ease-in-out',
+              }}
+              transition="transform 200ms ease-in-out"
             />
           </Link>
         ))}

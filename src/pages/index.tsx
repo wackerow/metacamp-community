@@ -2,8 +2,7 @@ import { GetStaticProps } from 'next'
 import { readdirSync } from 'fs'
 import path from 'path'
 
-import { Box, Button, Flex, Grid, Image, Text } from '@chakra-ui/react'
-// import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/react'
 import {
   CampersPreview,
   PageMetadata,
@@ -11,7 +10,7 @@ import {
   Section,
   Timeline,
 } from '@/components'
-import { PHOTO_CAROUSEL_IMAGES_DIR } from '@/constants'
+import { APPLICATION_FORM_URL, PHOTO_CAROUSEL_IMAGES_DIR } from '@/constants'
 import type { PhotoProps } from '@/types'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -33,7 +32,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
       {/* Section: Hero */}
       <Section align="center" pt="8vmin" position="relative">
         {/* Section content */}
-        <Flex direction="column" gap={0} alignItems="center">
+        <Flex direction="column" gap={0} alignItems="center" zIndex={3}>
           {/* COSTA RICA text image */}
           <Image
             src="/assets/title-logo.svg"
@@ -48,20 +47,31 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
             alt="Costa Rica text"
             zIndex={2}
           />
-          <Button // TODO: Will likely be a link
-            bg="primary"
-            color="fg"
-            fontSize="xl"
-            zIndex={2}
-            textTransform="uppercase"
-            p={8}
-            mt={12}
-            borderRadius="2xl"
-            w="min(100%, 290px)" // TODO: Magic number
-            isDisabled
-          >
-            Register
-          </Button>
+          <Link href={APPLICATION_FORM_URL} isExternal w="fit-content" data-group textDecoration="none !important">
+            <Box
+              bg="primary"
+              color="fg"
+              fontSize="xl"
+              fontWeight="bold"
+              zIndex={2}
+              textTransform="uppercase"
+              px={20}
+              py={4}
+              mt={12}
+              borderRadius="2xl"
+              w="min(100%, 290px)" // TODO: Magic number
+              _groupHover={{
+                bg: 'secondary',
+              }}
+              _groupActive={{
+                outline: '2px solid var(--chakra-colors-secondary)',
+                color: 'secondary',
+                bg: 'transparent',
+              }}
+            >
+              Register
+            </Box>
+          </Link>
         </Flex>
         {/* Section background */}
         <Box h="min(34vw, 420px)" />

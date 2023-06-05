@@ -96,7 +96,7 @@ export const slickCss = css`
     aspect-ratio: 16/9;
     border-radius: var(--chakra-radii-xl);
     object-fit: contain;
-    outline: 4px solid #00000020;
-    outline-offset: 2px;
+    outline: 8px solid #00000010;
+    outline-offset: 0px;
   }
 `

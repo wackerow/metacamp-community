@@ -3,6 +3,8 @@ import type { CamperQuote, Community } from '@/types'
 export const DEFAULT_IMAGE_PATH = 'assets/og-splash.png' as const
 export const SITE_NAME = 'MetaCamp' as const
 export const SITE_URL = 'https://metacamp.community' as const
+export const APPLICATION_FORM_URL =
+  'https://form.typeform.com/to/yXLG08Wn' as const
 export const TWITTER_HANDLE = '@metacampcommunity' as const
 
 export const PHOTO_CAROUSEL_IMAGES_DIR = '/assets/carousel' as const

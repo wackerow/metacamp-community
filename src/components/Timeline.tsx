@@ -101,7 +101,7 @@ export const Timeline: React.FC = () => {
             <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" fontFamily="mono">
               {year}
             </Text>
-            <Link href={href} isExternal={href.startsWith('http')}>
+            <Link href={href} isExternal={href.startsWith('http')} data-group textDecoration="none !important">
               <Flex
                 bg="white"
                 borderRadius="2xl"
@@ -112,6 +112,15 @@ export const Timeline: React.FC = () => {
                 w={['full', 'fit-content']}
                 justify="center"
                 textAlign="center"
+                _groupHover={{
+                  color: 'white',
+                  bg: 'fg',
+                }}
+                _groupActive={{
+                  outline: '2px solid var(--chakra-colors-fg)',
+                  color: 'fg',
+                  bg: 'transparent',
+                }}
               >
                 {label}
               </Flex>
