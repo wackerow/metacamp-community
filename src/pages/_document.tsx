@@ -30,6 +30,12 @@ export default function Document() {
           as="font"
           crossOrigin=""
         />
+        <link
+          rel="preload"
+          href="/fonts/trash-hand/TrashHand.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
