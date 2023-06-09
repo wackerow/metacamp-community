@@ -38,7 +38,7 @@ export const Fonts = () => (
         font-style:  regular;
         font-weight: 400;
         font-display: swap;
-        src: url("/fonts/trash-hand/TrashHand.ttf");
+        src: url("/fonts/trash-hand/TrashHand.TTF");
       }
     `}
   />
