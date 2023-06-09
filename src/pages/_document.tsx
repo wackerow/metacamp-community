@@ -32,7 +32,7 @@ export default function Document() {
         />
         <link
           rel="preload"
-          href="/fonts/trash-hand/TrashHand.ttf"
+          href="/fonts/trash-hand/TrashHand.TTF"
           as="font"
           crossOrigin=""
         />

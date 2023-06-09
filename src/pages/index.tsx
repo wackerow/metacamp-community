@@ -154,7 +154,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           display={{ base: 'none', md: 'block' }}
           position="absolute"
           bottom={0}
-          src="/assets/wood-sign-bg.svg"
+          src="/assets/wood-sign-bg.png"
           objectFit="cover"
           objectPosition="top"
           w="full"
@@ -165,7 +165,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           display={{ base: 'block', md: 'none' }}
           position="absolute"
           bottom={0}
-          src="/assets/wood-sign-mobile-bg.svg"
+          src="/assets/wood-sign-mobile-bg.png"
           objectFit="cover"
           objectPosition="top"
           w="full"
@@ -182,13 +182,14 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           }}
           w="full"
           zIndex={2}
-          pt={{ base: '12rem', sm: '0rem', md: '0rem', lg: '6rem'}}
-          mt={{ base: '-8rem', sm: '4rem', md: '4rem', lg: '3rem'}}
+          pt={{ base: '70vw', sm: "20vw", md: 8 }}
+          mt={{ base: '-50vw', sm: '-10vw', md: 8 }}
+
         >
           <Box
             mx={16}
-            bgImage="url(/assets/wood-sign-texture.svg)"
-            bgSize="contain"
+            bgImage="url(/assets/wood-texture.png)"
+            bgSize="cover"
             bgRepeat="repeat"
             px={{ base: 6, sm: 12 }}
             py={8}
@@ -227,7 +228,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           display={{ base: 'none', md: 'block' }}
           position="absolute"
           bottom={0}
-          src="/assets/wood-sign-fg.svg"
+          src="/assets/wood-sign-fg.png"
           objectFit="cover"
           objectPosition="bottom"
           w="full"
@@ -238,7 +239,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           display={{ base: 'block', md: 'none' }}
           position="absolute"
           bottom={0}
-          src="/assets/wood-sign-mobile-fg.svg"
+          src="/assets/wood-sign-mobile-fg.png"
           objectFit="cover"
           objectPosition="bottom"
           w="full"
