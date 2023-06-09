@@ -12,6 +12,7 @@ export const Section: React.FC<FlexProps> = ({ bg, ...restProps }) => {
           mx: 'auto',
         },
       }}
+      mt="-1px"
       {...restProps}
     />
   )

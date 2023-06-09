@@ -21,7 +21,7 @@ export const Fonts = () => (
       }
       @font-face {
         font-family: 'SpaceMono';
-        font-style:  bold;
+        font-style:  regular;
         font-weight: 800;
         font-display: swap;
         src: url("/fonts/space-mono/SpaceMono-Bold.ttf");
@@ -35,7 +35,7 @@ export const Fonts = () => (
       }
       @font-face {
         font-family: 'TrashHand';
-        font-style:  italic;
+        font-style:  regular;
         font-weight: 400;
         font-display: swap;
         src: url("/fonts/trash-hand/TrashHand.ttf");

@@ -216,7 +216,6 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
               textAlign="center"
               lineHeight="1.8"
               fontSize={['3xl', '4xl', '4xl', '5xl']}
-              // fontSize={{ base: '3xl', lg: '5xl' }}
             >
               Join us for 10 days of wild ranging conversations un-conference
               sessions, playa excursions, fresh and local food prepared daily.
