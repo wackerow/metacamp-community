@@ -139,7 +139,7 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
               and new connections with like minded and open hearted individuals.
             </Text>
           </Flex>
-          <PhotoCarousel photos={photos} />
+          <PhotoCarousel photos={photos} display={{ base: "none", xl: "flex" }} />
         </Flex>
       </Section>
       {/* Wood board sign */}
