@@ -89,14 +89,15 @@ export const slickCss = css`
     background: url('ajax-loader.gif') center center no-repeat #fff;
   }
 
-  .slick-list,
   .slick-slider,
   .slick-initialized {
     max-width: min(calc(100vw - 4rem), var(--chakra-sizes-container-sm));
     aspect-ratio: 16/9;
-    border-radius: var(--chakra-radii-xl);
     object-fit: contain;
-    outline: 8px solid #00000010;
-    outline-offset: 0px;
+    min-height: 100%;
+  }
+  .slick-list {
+    box-shadow: 0 0 0 8px #00000010;
+    border-radius: var(--chakra-radii-xl);
   }
 `

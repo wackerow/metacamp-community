@@ -53,80 +53,79 @@ export const Timeline: React.FC = () => {
       rowGap={{ base: 6, lg: 12}}
       columnGap={{ base: 6, lg: 12}}
     >
+      {data.map(({ year, href, src }, i) => (
+        <Box
+          key={i + href}
+          gridArea={`poap-${year}`}
+          borderRadius="full"
+          w={poapSize}
+          h={poapSize}
+          sx={{ aspectRatio: '1' }}
+          aria-label={`POAP for ${data[0].year}`}
+          bgImage={`url(/assets/${src})`}
+          bgSize="contain"
+          position="relative"
+          alignItems="center"
+          _after={{
+            content: `""`,
+            display: i === data.length - 1 ? 'none' : 'block',
+            position: 'absolute',
+            left: [
+              `calc(${poapSize} * 0.5 - 5px)`,
+              null,
+              null,
+              `calc(100% - ${overflow})`,
+            ],
+            top: [
+              `calc(100% - ${overflow})`,
+              null,
+              null,
+              `calc(${poapSize} * 0.5 - 5px)`,
+            ],
+            height: { base: `calc(4 * ${overflow})`, lg: '10px' }, // TODO: Magic number
+            width: { base: '10px', lg: `calc(4 * ${overflow})` },
+            bg: 'secondary-dark',
+            zIndex: -1,
+          }}
+        />
+      ))}
       {data.map(({ year, label, href, src }, i) => (
-        <>
-          <Box
-            key={href}
-            gridArea={`poap-${year}`}
-            borderRadius="full"
-            w={poapSize}
-            h={poapSize}
-            sx={{ aspectRatio: '1' }}
-            aria-label={`POAP for ${data[0].year}`}
-            bgImage={`url(/assets/${src})`}
-            bgSize="contain"
-            position="relative"
-            alignItems="center"
-            _after={{
-              content: `""`,
-              display: i === data.length - 1 ? 'none' : 'block',
-              position: 'absolute',
-              left: [
-                `calc(${poapSize} * 0.5 - 5px)`,
-                null,
-                null,
-                `calc(100% - ${overflow})`,
-              ],
-              top: [
-                `calc(100% - ${overflow})`,
-                null,
-                null,
-                `calc(${poapSize} * 0.5 - 5px)`,
-              ],
-              height: { base: `calc(4 * ${overflow})`, lg: '10px' }, // TODO: Magic number
-              width: { base: '10px', lg: `calc(4 * ${overflow})` },
-              bg: 'secondary-dark',
-              zIndex: -1,
-            }}
-          />
-          {/* TODO: Fix year font */}
-          <Flex
-            key={href}
-            gridArea={`label-${year}`}
-            direction="column"
-            align={{ base: 'start', lg: 'center' }}
-            gap={{ base: 2, lg: 8 }}
-            my="auto"
-          >
-            <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" fontFamily="mono">
-              {year}
-            </Text>
-            <Link href={href} isExternal={href.startsWith('http')} data-group textDecoration="none !important">
-              <Flex
-                bg="white"
-                borderRadius="2xl"
-                py={[3, 4]}
-                px={[6, 8]}
-                fontSize={["sm", "md"]}
-                fontWeight="bold"
-                w={['full', 'fit-content']}
-                justify="center"
-                textAlign="center"
-                _groupHover={{
-                  color: 'white',
-                  bg: 'fg',
-                }}
-                _groupActive={{
-                  outline: '2px solid var(--chakra-colors-fg)',
-                  color: 'fg',
-                  bg: 'transparent',
-                }}
-              >
-                {label}
-              </Flex>
-            </Link>
-          </Flex>
-        </>
+        <Flex
+          key={"label-" + href}
+          gridArea={`label-${year}`}
+          direction="column"
+          align={{ base: 'start', lg: 'center' }}
+          gap={{ base: 2, lg: 8 }}
+          my="auto"
+        >
+          <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" fontFamily="mono">
+            {year}
+          </Text>
+          <Link href={href} isExternal={href.startsWith('http')} data-group textDecoration="none !important">
+            <Flex
+              bg="white"
+              borderRadius="2xl"
+              py={[3, 4]}
+              px={[6, 8]}
+              fontSize={["sm", "md"]}
+              fontWeight="bold"
+              w={['full', 'fit-content']}
+              justify="center"
+              textAlign="center"
+              _groupHover={{
+                color: 'white',
+                bg: 'fg',
+              }}
+              _groupActive={{
+                outline: '2px solid var(--chakra-colors-fg)',
+                color: 'fg',
+                bg: 'transparent',
+              }}
+            >
+              {label}
+            </Flex>
+          </Link>
+        </Flex>
       ))}
     </Grid>
   )
