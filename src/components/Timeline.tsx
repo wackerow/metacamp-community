@@ -89,7 +89,7 @@ export const Timeline: React.FC = () => {
           }}
         />
       ))}
-      {data.map(({ year, label, href, src }, i) => (
+      {data.map(({ year, label, href }) => (
         <Flex
           key={"label-" + href}
           gridArea={`label-${year}`}

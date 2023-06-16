@@ -18,7 +18,7 @@ export const CAMPER_QUOTES: CamperQuote[] = [
     association: 'Karma3Labs',
     imageSrc: 'avatar-1.jpeg',
     quote:
-      "MetaCamp is this magic place where you meet an alternative reality and you meet people who share the values to build an alternative reality, for the better of the world. I had such a fantastic time with my fellow campers to explore the latest thoughts and learnings of mechanism design for DAOs. I got lots of inspirations for my project's mission to build the right reputation mechanisms for decentralized systems. But most importantly, I met the right people for building together.",
+      "MetaCamp is this magical place where you meet people who share the values of building alternative realities, for the better of the world. I had such a fantastic time with my fellow campers exploring the latest thoughts and mechanism designs for DAOs. I got loads of inspirations for my own project's mission on how to build the right reputation mechanisms for a decentralized system. But most importantly, I met the right people for building together.",
     area: 'quote-one',
   },
   {
@@ -26,7 +26,7 @@ export const CAMPER_QUOTES: CamperQuote[] = [
     association: 'SuperModular',
     imageSrc: 'avatar-2.jpeg',
     quote:
-      "MetaCamp had the best of costa rica: sunshine, surf, hiking, & natural beauty. But the real magic at is in the curated participants, which offered great mental stimulation as well - The unconference sessions allowed me to nerd out in paradise with my favorite DAO frens. The vibes were high at an all time high and I'll be back next year, because MetaCamp is 1337.",
+      "MetaCamp is the best of Costa Rica: sunshine, surf, hiking, & natural beauty. But the real magic at it's heart is in the curated participants, which offered great mental stimulation. The unconference sessions allowed me to nerd out in paradise with my favorite DAO frens. The vibes were high at an all time high, I'll definitely be back next year, MetaCamp is 1337.",
     area: 'quote-two',
   },
   {
