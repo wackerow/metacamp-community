@@ -15,19 +15,25 @@ const data: TimelineItem[] = [
   },
   {
     year: 2022,
-    label: 'Version 1',
+    label: 'Edition I',
     href: 'https://poap.gallery/event/37190',
     src: 'poap-metacamp-2022.png',
   },
   {
     year: 2023,
-    label: 'Version 2',
+    label: 'Edition II',
     href: 'https://poap.gallery/event/125389',
     src: 'poap-metacamp-2023.png',
   },
   {
+    year: 2023,
+    label: 'Edition III',
+    href: '', // TODO: Need link to POAP
+    src: 'poap-metacamp-2023-III.jpeg',
+  },
+  {
     year: 2024,
-    label: 'Whitelist for V3',
+    label: 'Register for IV',
     href: '#',
     src: 'poap-future.svg',
   },
@@ -38,25 +44,26 @@ export const Timeline: React.FC = () => {
   const overflow = '1rem'
   return (
     <Grid
-      templateAreas={{
+      templateAreas={{ // USE INDEX for array instead of year
         base: `
-          "poap-2021 label-2021"
-          "poap-2022 label-2022"
-          "poap-2023 label-2023"
-          "poap-2024 label-2024"
+          "poap-0 label-0"
+          "poap-1 label-1"
+          "poap-2 label-2"
+          "poap-3 label-3"
+          "poap-4 label-4"
         `,
-        lg: `
-          "poap-2021 poap-2022 poap-2023 poap-2024"
-          "label-2021 label-2022 label-2023 label-2024"
+        xl: `
+          "poap-0 poap-1 poap-2 poap-3 poap-4"
+          "label-0 label-1 label-2 label-3 label-4"
         `,
       }}
-      rowGap={{ base: 6, lg: 12}}
-      columnGap={{ base: 6, lg: 12}}
+      rowGap={{ base: 6, xl: 12}}
+      columnGap={{ base: 6, xl: 12}}
     >
-      {data.map(({ year, href, src }, i) => (
+      {data.map(({ href, src }, i) => (
         <Box
           key={i + href}
-          gridArea={`poap-${year}`}
+          gridArea={`poap-${i}`} // TODO: Fix grid system
           borderRadius="full"
           w={poapSize}
           h={poapSize}
@@ -74,34 +81,36 @@ export const Timeline: React.FC = () => {
               `calc(${poapSize} * 0.5 - 5px)`,
               null,
               null,
+              null,
               `calc(100% - ${overflow})`,
             ],
             top: [
               `calc(100% - ${overflow})`,
               null,
               null,
+              null,
               `calc(${poapSize} * 0.5 - 5px)`,
             ],
-            height: { base: `calc(4 * ${overflow})`, lg: '10px' }, // TODO: Magic number
-            width: { base: '10px', lg: `calc(4 * ${overflow})` },
+            height: { base: `calc(4 * ${overflow})`, xl: '10px' }, // TODO: Magic number
+            width: { base: '10px', xl: `calc(4 * ${overflow})` },
             bg: 'secondary-dark',
             zIndex: -1,
           }}
         />
       ))}
-      {data.map(({ year, label, href }) => (
+      {data.map(({ year, label, href }, i) => (
         <Flex
           key={"label-" + href}
-          gridArea={`label-${year}`}
+          gridArea={`label-${i}`}
           direction="column"
-          align={{ base: 'start', lg: 'center' }}
-          gap={{ base: 2, lg: 8 }}
+          align={{ base: 'start', xl: 'center' }}
+          gap={{ base: 2, xl: 8 }}
           my="auto"
         >
           <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" fontFamily="mono">
             {year}
           </Text>
-          <Link href={href} isExternal={href.startsWith('http')} data-group textDecoration="none !important">
+          <Link pointerEvents={href.length > 0 ? "unset": "none"} href={href} isExternal={href.startsWith('http')} data-group textDecoration="none !important">
             <Flex
               bg="white"
               borderRadius="2xl"
