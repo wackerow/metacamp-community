@@ -47,31 +47,61 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
             alt="Costa Rica text"
             zIndex={2}
           />
-          <Link href={APPLICATION_FORM_URL} isExternal w="fit-content" data-group textDecoration="none !important">
-            <Box
-              bg="primary"
-              color="fg"
-              fontSize="xl"
-              fontWeight="bold"
-              zIndex={2}
-              textTransform="uppercase"
-              px={20}
-              py={4}
-              mt={12}
-              borderRadius="2xl"
-              w="min(100%, 290px)" // TODO: Magic number
-              _groupHover={{
-                bg: 'secondary',
-              }}
-              _groupActive={{
-                outline: '2px solid var(--chakra-colors-secondary)',
-                color: 'secondary',
-                bg: 'transparent',
-              }}
-            >
-              Register
-            </Box>
-          </Link>
+
+          <Flex direction="column" w="fit-content" mx="4">
+            <Link href="Metacamp_IV_Flyer_-_2024.pdf" isExternal w="full" data-group textDecoration="none !important" textAlign="center">
+              <Box
+                bg="transparent"
+                borderColor="primary"
+                border="2px"
+                color="primary"
+                fontSize="xl"
+                fontWeight="bold"
+                zIndex={2}
+                textTransform="uppercase"
+                py="4"
+                px="8"
+                mt={12}
+                borderRadius="2xl"
+                _groupHover={{
+                  borderColor: 'secondary',
+                  color: 'secondary',
+                  border: "2px"
+                }}
+                _groupActive={{
+                  outline: '2px solid var(--chakra-colors-secondary)',
+                  color: 'secondary',
+                  bg: 'transparent',
+                }}
+              >
+                MetaCamp IV Details
+              </Box>
+            </Link>
+            <Link href={APPLICATION_FORM_URL} isExternal w="full" data-group textDecoration="none !important" textAlign="center">
+              <Box
+                bg="primary"
+                color="fg"
+                fontSize="xl"
+                fontWeight="bold"
+                zIndex={2}
+                textTransform="uppercase"
+                px={20}
+                py={4}
+                mt={12}
+                borderRadius="2xl"
+                _groupHover={{
+                  bg: 'secondary',
+                }}
+                _groupActive={{
+                  outline: '2px solid var(--chakra-colors-secondary)',
+                  color: 'secondary',
+                  bg: 'transparent',
+                }}
+              >
+                Register
+              </Box>
+            </Link>
+          </Flex>
         </Flex>
         {/* Section background */}
         <Box h="min(34vw, 420px)" />
