@@ -59,8 +59,8 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
                 fontWeight="bold"
                 zIndex={2}
                 textTransform="uppercase"
-                px={20}
-                py={4}
+                py="4"
+                px="8"
                 mt={12}
                 borderRadius="2xl"
                 _groupHover={{
@@ -73,9 +73,8 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
                   color: 'secondary',
                   bg: 'transparent',
                 }}
-                whiteSpace="nowrap"
               >
-                2024 Details
+                MetaCamp IV Details
               </Box>
             </Link>
             <Link href={APPLICATION_FORM_URL} isExternal w="full" data-group textDecoration="none !important" textAlign="center">
