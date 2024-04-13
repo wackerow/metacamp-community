@@ -248,8 +248,8 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
               lineHeight="1.8"
               fontSize={['3xl', '4xl', '4xl', '5xl']}
             >
-              Join us for 2 weeks of wild ranging conversations un-conference
-              sessions, playa excursions, fresh and local food prepared daily.
+              Join us for wild ranging conversations, daily
+              workshops, ancient ceremonies, and fresh local food!
             </Text>
           </Box>
         </Flex>
