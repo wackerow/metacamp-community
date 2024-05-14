@@ -49,34 +49,6 @@ const Home: React.FC<PhotoProps> = ({ photos }) => {
           />
 
           <Flex direction="column" w="fit-content" mx="4">
-            <Link href="Metacamp_IV_Flyer_-_2024.pdf" isExternal w="full" data-group textDecoration="none !important" textAlign="center">
-              <Box
-                bg="transparent"
-                borderColor="primary"
-                border="2px"
-                color="primary"
-                fontSize="xl"
-                fontWeight="bold"
-                zIndex={2}
-                textTransform="uppercase"
-                py="4"
-                px="8"
-                mt={12}
-                borderRadius="2xl"
-                _groupHover={{
-                  borderColor: 'secondary',
-                  color: 'secondary',
-                  border: "2px"
-                }}
-                _groupActive={{
-                  outline: '2px solid var(--chakra-colors-secondary)',
-                  color: 'secondary',
-                  bg: 'transparent',
-                }}
-              >
-                MetaCamp IV Details
-              </Box>
-            </Link>
             <Link href={APPLICATION_FORM_URL} isExternal w="full" data-group textDecoration="none !important" textAlign="center">
               <Box
                 bg="primary"
