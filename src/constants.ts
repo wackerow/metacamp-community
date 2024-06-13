@@ -146,6 +146,11 @@ export const COMMUNITIES: Community[] = [
     href: 'https://cultur3.capital/',
     imageSrc: 'cultur3.svg',
   },
+  {
+    name: 'KlimaDAO',
+    href: 'https://klimadao.finance/',
+    imageSrc: 'klimadao.svg',
+  },
 ].map(({ imageSrc, ...rest }) => ({
   imageSrc: `${COMMUNITIES_LOGOS_DIR}${imageSrc}`,
   ...rest,
